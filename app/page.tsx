@@ -1,3 +1,4 @@
+
 export default function Home() {
-  return <div>Hummfly Tech Website</div>;
+  return <div>HummFly Website</div>;
 }
