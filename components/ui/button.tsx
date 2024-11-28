@@ -1,58 +1,61 @@
-import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
+import React, { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
+import { cn } from "@/lib/utils"; // Optional utility for className merging
 
-import { cn } from "@/lib/utils";
-
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
-  {
-    variants: {
-      variant: {
-        default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90 border border-transparent",
-        destructive:
-          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 border border-transparent",
-        outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 border border-transparent",
-        ghost:
-          "hover:bg-accent hover:text-accent-foreground border border-transparent",
-        link: "text-primary underline-offset-4 hover:underline border-none",
-      },
-      size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8 text-base",
-        icon: "h-9 w-9",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  },
+type CustomButtonProps = {
+  as?: "button" | "a";
+  variant?: "default" | "outline" | "primary";
+  rounded?: string;
+  className?: string;
+  children: React.ReactNode;
+} & (
+  | ButtonHTMLAttributes<HTMLButtonElement>
+  | (AnchorHTMLAttributes<HTMLAnchorElement> & { href: string })
 );
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-}
+const CustomButton: React.FC<CustomButtonProps> = ({
+  as = "button",
+  variant = "default",
+  rounded = "rounded-lg",
+  className,
+  children,
+  ...props
+}) => {
+  const baseClasses =
+    "inline-flex items-center justify-center gap-2 text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2";
+  const variants = {
+    default: "bg-primary text-white hover:bg-primary/90 border border-primary",
+    outline:
+      "bg-transparent border border-primary text-primary hover:bg-primary hover:text-white",
+    primary: "bg-primary text-white hover:bg-primary/90",
+  };
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
+  const combinedClasses = cn(
+    baseClasses,
+    variants[variant],
+    rounded,
+    className,
+  );
+
+  // Render <a> with valid anchor attributes
+  if (as === "a") {
+    const { href, ...anchorProps } =
+      props as AnchorHTMLAttributes<HTMLAnchorElement>;
     return (
-      <Comp
-        className={cn(buttonVariants({ variant, size }), className)}
-        ref={ref}
-        {...props}
-      />
+      <a href={href} className={combinedClasses} {...anchorProps}>
+        {children}
+      </a>
     );
-  },
-);
-Button.displayName = "Button";
+  }
 
-export { Button, buttonVariants };
+  // Render <button> with valid button attributes
+  return (
+    <button
+      className={combinedClasses}
+      {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
+    >
+      {children}
+    </button>
+  );
+};
+
+export default CustomButton;
