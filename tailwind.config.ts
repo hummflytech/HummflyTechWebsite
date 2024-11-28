@@ -1,12 +1,13 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
-  darkMode: ["class"], 
+  darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@shadcn/ui/dist/**/*.{js,ts,jsx,tsx}", 
+    "./node_modules/@shadcn/ui/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -16,7 +17,7 @@ export default {
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#1bb188", 
+          DEFAULT: "#1bb188",
           foreground: "hsl(var(--secondary-foreground))",
         },
         background: "hsl(var(--background))",
@@ -53,7 +54,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Poppins", "sans-serif"], 
+        sans: ["Poppins", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -62,5 +63,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;
