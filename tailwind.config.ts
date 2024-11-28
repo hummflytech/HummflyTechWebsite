@@ -1,22 +1,23 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
-  darkMode: ["class"], 
+  darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@shadcn/ui/dist/**/*.{js,ts,jsx,tsx}", 
+    "./node_modules/@shadcn/ui/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#ff0045",
+          DEFAULT: "#1bb188",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#1bb188", 
+          DEFAULT: "#FF4500",
           foreground: "hsl(var(--secondary-foreground))",
         },
         background: "hsl(var(--background))",
@@ -53,7 +54,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Poppins", "sans-serif"], 
+        sans: ["Poppins", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -62,5 +63,10 @@ export default {
       },
     },
   },
+<<<<<<< HEAD
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+=======
+  plugins: [tailwindcssAnimate],
+} satisfies Config;
+>>>>>>> 5fa82eea2560ccc38c3f45afb4ce403d0cf7c716
