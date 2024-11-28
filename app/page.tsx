@@ -1,5 +1,6 @@
 import SimpleCard from "@/components/ui/servicesCard";
-// import Poppins from
+import serviceButton from "@/components/ui/serviceButton";
+
 
 export default function Services() {
   return (
@@ -10,7 +11,7 @@ export default function Services() {
         <h1 className="text-4xl font-poppins text-[#FF4500] font-semibold text-[40px]" >Our Services</h1>
         
 
-        <p className="mt-4 text-xl font-semibold text-[40.00px] text-[#E141414]">Comprehensive Digital Solutions for Your <br/><br/> Business Needs</p>
+        <p className="mt-4 text-xl font-semibold text-[40.0px] text-[#E141414]">Comprehensive Digital Solutions for Your <br/><br/> Business Needs</p>
       </div>
 
       {/* Services Cards */}
@@ -29,7 +30,7 @@ export default function Services() {
           <SimpleCard
             number = "03"
             title="Web Development"
-            description="Full-stack web development for responsive, scalable, and robust web solutions."
+            description="web development for responsive, scalable, and robust web solutions."
           />
           <SimpleCard
             number = "04"
@@ -45,7 +46,17 @@ export default function Services() {
             number = "06"
             title="AI & Machine Leanrning"
             description="Data-driven insights and analytics solutions for informed decision-making."
-          />
+          /> 
+          
+          <div className=" ml-auto mx-auto px-4 py-2   mt-auto flex justify-center"> <button 
+        type="button"
+        className="font-poppins  font-bold mt-auto ml-[450px]  px-[10px] py-4 w-[300px] bg-[#22B286] text-white rounded hover:bg-[#1b945b] transition-colors"
+      >
+        Explore Our Services
+      </button>
+</div>
+        
+         
         </div>
       {/* </main> */}
     </div>
