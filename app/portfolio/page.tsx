@@ -102,7 +102,7 @@ const PortfolioList = () => {
     descriptionTextColor?: string;
   }) => (
     <div>
-      <h2 className="text-center p-4 text-[35px]">{title}</h2>
+      <h2 className="text-center p-4 text-[35px] my-6">{title}</h2>
       <div className="relative">
         <div
           ref={refContainer}
@@ -136,8 +136,10 @@ const PortfolioList = () => {
             (_, index) => (
               <div
                 key={index}
-                className={`w-3 h-3 rounded-full ${index === dataIndex ? "bg-[#20B486]" : "bg-gray-300"}`}
-              ></div>
+                className={`w-3 h-3 m-6 rounded-full flex gap-4 ${index === dataIndex ? "bg-[#20B486]" : "bg-gray-300"}`}
+              >
+
+              </div>
             )
           )}
 
