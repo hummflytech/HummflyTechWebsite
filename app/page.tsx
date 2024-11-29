@@ -1,3 +1,9 @@
-export default function Home() {
-  return <div>Hummfly Tech Website</div>;
+import Home from "@/components/Home/home";
+
+export default function Page() {
+  return (
+    <div>
+      <Home />{" "}
+    </div>
+  );
 }
