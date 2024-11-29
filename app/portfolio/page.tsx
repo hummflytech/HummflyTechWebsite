@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
-import { mockData } from "./data";
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PortFolio } from "./card";
+import { mockData } from "./data";
 
 const PortfolioList = () => {
   const websiteRef = useRef<HTMLDivElement>(null);
@@ -19,7 +19,7 @@ const PortfolioList = () => {
   // Function to update the indicator based on scroll position
   const updateIndicator = (
     ref: React.RefObject<HTMLDivElement>,
-    setIndex: React.Dispatch<React.SetStateAction<number>>
+    setIndex: React.Dispatch<React.SetStateAction<number>>,
   ) => {
     if (ref.current) {
       const scrollPosition = ref.current.scrollLeft;
@@ -29,7 +29,10 @@ const PortfolioList = () => {
     }
   };
 
-  const scrollLeft = (ref: React.RefObject<HTMLDivElement>, setIndex: React.Dispatch<React.SetStateAction<number>>) => {
+  const scrollLeft = (
+    ref: React.RefObject<HTMLDivElement>,
+    setIndex: React.Dispatch<React.SetStateAction<number>>,
+  ) => {
     if (ref.current) {
       const sectionWidth = ref.current.clientWidth;
       ref.current.scrollBy({ left: -sectionWidth, behavior: "smooth" });
@@ -37,7 +40,10 @@ const PortfolioList = () => {
     }
   };
 
-  const scrollRight = (ref: React.RefObject<HTMLDivElement>, setIndex: React.Dispatch<React.SetStateAction<number>>) => {
+  const scrollRight = (
+    ref: React.RefObject<HTMLDivElement>,
+    setIndex: React.Dispatch<React.SetStateAction<number>>,
+  ) => {
     if (ref.current) {
       const sectionWidth = ref.current.clientWidth;
       ref.current.scrollBy({ left: sectionWidth, behavior: "smooth" });
@@ -50,35 +56,34 @@ const PortfolioList = () => {
     const refArray = [websiteRef, mobileAppRef, uiuxRef];
     const indexArray = [websiteIndex, mobileAppIndex, uiuxIndex];
     const currentRef = refArray[indexArray.indexOf(websiteIndex)];
-    
-    if (currentRef && currentRef.current) {
+
+    if (currentRef?.current) {
       const sectionWidth = currentRef.current.clientWidth;
       currentRef.current.scrollLeft = sectionWidth * websiteIndex;
     }
-  }, [websiteIndex]);
+  }, [websiteIndex, mobileAppIndex, uiuxIndex]);
 
-  // The same effect should be added for mobileAppIndex and uiuxIndex
   useEffect(() => {
     const refArray = [websiteRef, mobileAppRef, uiuxRef];
     const indexArray = [websiteIndex, mobileAppIndex, uiuxIndex];
     const currentRef = refArray[indexArray.indexOf(mobileAppIndex)];
-    
-    if (currentRef && currentRef.current) {
+
+    if (currentRef?.current) {
       const sectionWidth = currentRef.current.clientWidth;
       currentRef.current.scrollLeft = sectionWidth * mobileAppIndex;
     }
-  }, [mobileAppIndex]);
+  }, [websiteIndex, mobileAppIndex, uiuxIndex]);
 
   useEffect(() => {
     const refArray = [websiteRef, mobileAppRef, uiuxRef];
     const indexArray = [websiteIndex, mobileAppIndex, uiuxIndex];
     const currentRef = refArray[indexArray.indexOf(uiuxIndex)];
-    
-    if (currentRef && currentRef.current) {
+
+    if (currentRef?.current) {
       const sectionWidth = currentRef.current.clientWidth;
       currentRef.current.scrollLeft = sectionWidth * uiuxIndex;
     }
-  }, [uiuxIndex]);
+  }, [websiteIndex, mobileAppIndex, uiuxIndex]);
 
   const Section = ({
     title,
@@ -109,8 +114,8 @@ const PortfolioList = () => {
           className="flex overflow-x-auto space-x-4 px-4 scrollbar-hide snap-x"
           onScroll={() => updateIndicator(refContainer, setIndex)} // Update indicator when manually scrolling
         >
-          {mockData.map((item, index) => (
-            <div className="snap-start shrink-0" key={index}>
+          {mockData.map((item) => (
+            <div className="snap-start shrink-0" key={item.id}>
               <PortFolio
                 image={item.image}
                 title={item.title}
@@ -127,24 +132,24 @@ const PortfolioList = () => {
 
         <div className="flex justify-center mt-4 items-center space-x-2">
           <button
+            type="button"
             onClick={() => scrollLeft(refContainer, setIndex)} // Adjust scrollLeft with the right index
           >
             <CircleChevronLeft size={25} color="#20B486" strokeWidth={2} />
           </button>
 
-          {Array.from({ length: Math.ceil(mockData.length / itemsPerView) }).map(
-            (_, index) => (
+          {mockData
+            .slice(0, Math.ceil(mockData.length / itemsPerView))
+            .map((_, index) => (
               <div
-                key={index}
+                key={mockData[index]?.id || `indicator-${index}`} // Use `id` if available, fallback to a prefixed index
                 className={`w-3 h-3 m-6 rounded-full flex gap-4 ${index === dataIndex ? "bg-[#20B486]" : "bg-gray-300"}`}
-              >
-
-              </div>
-            )
-          )}
+              />
+            ))}
 
           <button
-            onClick={() => scrollRight(refContainer, setIndex)} // Adjust scrollRight with the right index
+            type="button"
+            onClick={() => scrollRight(refContainer, setIndex)}
           >
             <CircleChevronRight size={25} color="#20B486" strokeWidth={2} />
           </button>
@@ -155,7 +160,9 @@ const PortfolioList = () => {
 
   return (
     <main>
-      <h1 className="text-[40px] text-[#20B486] font-bold text-center my-4">Our Portfolio</h1>
+      <h1 className="text-[40px] text-[#20B486] font-bold text-center my-4">
+        Our Portfolio
+      </h1>
       <p className="max-w-[1040px] text-[20px] mx-auto text-center">
         Explore some of our recent projects to see how we’ve helped businesses
         across various industries achieve their digital goals.

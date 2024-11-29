@@ -1,13 +1,13 @@
-import React from "react";
-import { StaticImageData } from "next/image";
 import {
   Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
 } from "@/components/ui/card"; // Adjust the path based on your project structure
+import type { StaticImageData } from "next/image";
+import React from "react";
 
 interface PortFolioProps {
   image: string | StaticImageData;
@@ -45,7 +45,9 @@ export const PortFolio = ({
         />
       </CardHeader>
       <CardContent className="flex flex-col mt-4 px-4">
-        <CardTitle className={`text-[18px] text-center mb-2 text-${titleTextColor}`}>
+        <CardTitle
+          className={`text-[18px] text-center mb-2 text-${titleTextColor}`}
+        >
           {title}
         </CardTitle>
         <CardDescription className={`text-[15px] text-${descriptionTextColor}`}>
@@ -54,6 +56,7 @@ export const PortFolio = ({
       </CardContent>
       <CardFooter>
         <button
+          type="button"
           className="absolute bottom-2 right-4 px-4 py-1 rounded-[30px] text-[15px]"
           style={{
             backgroundColor: buttonBackgroundColor,
