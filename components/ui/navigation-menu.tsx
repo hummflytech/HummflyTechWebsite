@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-import * as React from "react"
-import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
-import { cva } from "class-variance-authority"
-import { ChevronDown } from "lucide-react"
-=======
-import * as React from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";
 import { ChevronDown } from "lucide-react";
->>>>>>> 5fa82eea2560ccc38c3f45afb4ce403d0cf7c716
+import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -132,12 +125,4 @@ export {
   NavigationMenuLink,
   NavigationMenuIndicator,
   NavigationMenuViewport,
-<<<<<<< HEAD
-}
-
-
-
-
-=======
 };
->>>>>>> 5fa82eea2560ccc38c3f45afb4ce403d0cf7c716

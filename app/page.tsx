@@ -11,7 +11,7 @@ export default function Services() {
         <h1 className="text-4xl font-poppins text-[#FF4500] font-semibold text-[40px]" >Our Services</h1>
         
 
-        <p className="mt-4 text-xl font-semibold text-[40.0px] text-[#E141414]">Comprehensive Digital Solutions for Your <br/><br/> Business Needs</p>
+        <p className="mt-4 text-xl font-semibold text-[40.00px] text-[#E141414]">Comprehensive Digital Solutions for Your  <br/><br/> Business Needs</p>
       </div>
 
       {/* Services Cards */}
