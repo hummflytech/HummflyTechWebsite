@@ -102,7 +102,7 @@ const PortfolioList = () => {
     descriptionTextColor?: string;
   }) => (
     <div>
-      <h2 className="text-center p-4 text-[35px] my-6">{title}</h2>
+      <h2 className="text-center p-4 text-[35px] my-6 font-semibold">{title}</h2>
       <div className="relative">
         <div
           ref={refContainer}
