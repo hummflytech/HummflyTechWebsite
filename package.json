@@ -6,9 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "eslint . --ext .js,.ts,.jsx,.tsx --fix && prettier --write .",
-    "prepare": "husky install",
+    "lint": "biome check app/",
+    "lint:fix": "biome check app/ --fix",
+    "format": "biome format src/",
+    "prepare": "husky",
     "test": "echo \"Running tests...\" && exit 0"
   },
   "dependencies": {
@@ -27,10 +28,11 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "autoprefixer": "^10.4.20",
+    "biome": "^0.3.3",
     "eslint": "^8.57.1",
     "eslint-config-next": "15.0.3",
     "husky": "^8.0.0",
