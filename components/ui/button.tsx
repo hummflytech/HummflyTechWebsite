@@ -1,5 +1,6 @@
-import React, { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils"; // Optional utility for className merging
+import type React from "react";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 
 type CustomButtonProps = {
   as?: "button" | "a";
