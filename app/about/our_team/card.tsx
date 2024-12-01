@@ -1,6 +1,6 @@
-import React from 'react';
-import im1 from "../../../public/images/h.png";
+import React from "react";
 import { Mail, Phone, Linkedin, Facebook } from "lucide-react";
+import Image from "next/image";
 
 interface TeamCardProps {
   name: string;
@@ -14,13 +14,21 @@ interface TeamCardProps {
     facebook: string;
   };
 }
-const TeamCard = ({ name, role, description, image, socialLinks }: TeamCardProps) => {
+const TeamCard = ({
+  name,
+  role,
+  description,
+  image,
+  socialLinks,
+}: TeamCardProps) => {
   return (
     <div className="w-[280px] h-[320px] bg-[#2CCA9A] flex flex-col items-center gap-2 border-2 border-white text-white relative overflow-hidden group rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-      <img
+      <Image
         src={image}
         alt={name}
         className="w-[220px] mt-4 transition-transform duration-500 group-hover:scale-110"
+        width={300} // Replace with your actual image width
+        height={200} // Replace with your actual image height
       />
       <p className="text-[18px] font-semibold">{name}</p>
       <p className="text-[13px] mt-[-8px] mb-4">{role}</p>

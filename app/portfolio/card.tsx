@@ -1,5 +1,5 @@
 import React from "react";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 import {
   Card,
   CardHeader,
@@ -7,15 +7,15 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from "@/components/ui/card"; // Adjust the path based on your project structure
+} from "@/components/ui/card";
 
 interface PortFolioProps {
   image: string | StaticImageData;
   title: string;
   description: string;
   cardBackgroundColor?: string;
-  titleTextColor?: string; // Add dynamic title color
-  descriptionTextColor?: string; // Add dynamic description color
+  titleTextColor?: string;
+  descriptionTextColor?: string;
   buttonText?: string;
   buttonBackgroundColor?: string;
   buttonTextColor?: string;
@@ -29,23 +29,27 @@ export const PortFolio = ({
   titleTextColor = "white", // Default title color
   descriptionTextColor = "white", // Default description color
   buttonText = "Explore here",
-  buttonBackgroundColor = "#FF4500",
-  buttonTextColor = "white",
+  buttonBackgroundColor = "white",
+  buttonTextColor = "#FF4500",
 }: PortFolioProps) => {
   return (
     <Card
-      className="w-[430px] h-[400px] border-2 border-gray-300 mt-5 ml-5 rounded-t-[22px] relative"
+      className="w-[430px] h-[400px] border-[1px] border-[#CAFFEF] mt-5 ml-5 rounded-t-[22px] relative transition-transform duration-300 ease-in-out hover:scale-[1.01] hover:shadow-lg"
       style={{ backgroundColor: cardBackgroundColor }}
     >
       <CardHeader className="h-[230px] p-0">
-        <img
+        <Image
           src={typeof image === "string" ? image : image.src}
           alt={title}
-          className="w-full h-full object-cover rounded-t-[22px]"
+          className="w-full h-full object-cover rounded-t-[22px] "
+          width={300} // Replace with your actual image width
+          height={200} // Replace with your actual image height
         />
       </CardHeader>
       <CardContent className="flex flex-col mt-4 px-4">
-        <CardTitle className={`text-[18px] text-center mb-2 text-${titleTextColor}`}>
+        <CardTitle
+          className={`text-[18px] text-center mb-2 text-${titleTextColor}`}
+        >
           {title}
         </CardTitle>
         <CardDescription className={`text-[15px] text-${descriptionTextColor}`}>
@@ -54,7 +58,7 @@ export const PortFolio = ({
       </CardContent>
       <CardFooter>
         <button
-          className="absolute bottom-2 right-4 px-4 py-1 rounded-[30px] text-[15px]"
+          className="absolute bottom-2 right-4 px-4 py-1 rounded-[30px] text-[15px] transition-colors duration-200 ease-in-out hover:bg-opacity-80"
           style={{
             backgroundColor: buttonBackgroundColor,
             color: buttonTextColor,
