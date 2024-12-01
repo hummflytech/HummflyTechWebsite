@@ -10,7 +10,7 @@ import Button from "../ui/button";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50">
+    <header className="sticky top-0 z-50 bg-white">
       <div className=" px-4 sm:px-6 lg:px-8 flex items-center py-4">
         <div>
           <Image src="/images/logo.png" alt="Logo" width={244} height={42} />
