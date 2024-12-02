@@ -58,6 +58,7 @@ export const PortFolio = ({
       </CardContent>
       <CardFooter>
         <button
+          type="button"
           className="absolute bottom-2 right-4 px-4 py-1 rounded-[30px] text-[15px] transition-colors duration-200 ease-in-out hover:bg-opacity-80"
           style={{
             backgroundColor: buttonBackgroundColor,
