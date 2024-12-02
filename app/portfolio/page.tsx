@@ -1,13 +1,13 @@
 "use client";
-import React from "react";
-import Slider, { Settings } from "react-slick";
+import type React from "react";
+import Slider, { type Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { mockData } from "./data";
-import { PortFolio } from "./card";
 import Image from "next/image";
-import im1 from "../../public/images/Forward.png"; // Right Arrow Image
 import im2 from "../../public/images/Back.png"; // Left Arrow Image
+import im1 from "../../public/images/Forward.png"; // Right Arrow Image
+import { PortFolio } from "./card";
+import { mockData } from "./data";
 
 // Define the props type for the custom arrow components
 interface ArrowProps {

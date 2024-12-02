@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import { testimonials } from "./data"; // Mock data for testimonials
-import TestimonialCard from "./card";
 import Slider from "react-slick";
+import TestimonialCard from "./card";
+import { testimonials } from "./data"; // Mock data for testimonials
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

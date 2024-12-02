@@ -1,6 +1,6 @@
 import im1 from "../../public/images/image_guests_1.png";
-import im2 from "../../public/images/image_guests_2.png";
 import im3 from "../../public/images/image_guests_1.png";
+import im2 from "../../public/images/image_guests_2.png";
 
 // Create an array of mock testimonials
 export const testimonials = [

@@ -1,12 +1,10 @@
 "use client";
-
-import React from "react";
+import CustomButton from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import React from "react";
 import aboutImg from "../../public/images/AboutUsSection.png";
 import aboutWoman from "../../public/images/aboutuswoman.png";
-import { ArrowRight } from "lucide-react";
-import Button from "@/components/ui/button";
-import CustomButton from "@/components/ui/button";
 const Page = () => {
   return (
     <div className="flex flex-col gap-28 max-w-[1440px] mx-auto px-6 lg:px-16 mb-14">
@@ -23,20 +21,20 @@ const Page = () => {
             businesses thrive in the digital world. With a focus on technology
             innovation, user-centric design, and robust development practices,
             we bring unique digital experiences to life. Our team of seasoned
-            developers, designers, and strategists work closely with you to
-            turn complex challenges into efficient, scalable, and effective
+            developers, designers, and strategists work closely with you to turn
+            complex challenges into efficient, scalable, and effective
             solutions.
           </p>
           <CustomButton
-      as="a"
-      href="about/our_team"
-      variant="primary"
-      rounded="rounded-full"
-      className="mt-8 px-8 py-4 shadow-lg hover:bg-[#1A906B]/90"
-    >
-      Get to know The Team
-      <ArrowRight size={20} />
-    </CustomButton>
+            as="a"
+            href="about/our_team"
+            variant="primary"
+            rounded="rounded-full"
+            className="mt-8 px-8 py-4 shadow-lg hover:bg-[#1A906B]/90"
+          >
+            Get to know The Team
+            <ArrowRight size={20} />
+          </CustomButton>
         </div>
         <div className="flex-1">
           <Image

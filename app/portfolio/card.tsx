@@ -1,5 +1,3 @@
-import React from "react";
-import Image, { StaticImageData } from "next/image";
 import {
   Card,
   CardContent,
@@ -8,6 +6,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Image, { type StaticImageData } from "next/image";
+import React from "react";
 
 interface PortFolioProps {
   image: string | StaticImageData;
