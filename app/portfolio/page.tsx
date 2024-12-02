@@ -70,7 +70,10 @@ const Page: React.FC = () => {
         "Mobile Application Development",
         "UI/UX Design",
       ].map((sectionTitle, index) => (
-        <div key={index} className="mt-20 mb-10 w-[1400px] mx-auto relative">
+        <div
+          key={sectionTitle}
+          className="mt-20 mb-10 w-[1400px] mx-auto relative"
+        >
           <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10">
             {sectionTitle}
           </h1>
