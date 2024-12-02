@@ -34,7 +34,7 @@ const TestimonialList = () => {
       </h1>
       <Slider {...settings} ref={sliderRef}>
         {testimonials.map((testimonial, index) => (
-          <div className="max-w-[1000px] ml-8" key={index}>
+          <div className="max-w-[1000px] ml-8" key={testimonial.id}>
             <TestimonialCard
               index={index}
               image={testimonial.image}

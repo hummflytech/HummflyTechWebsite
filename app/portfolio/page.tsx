@@ -75,9 +75,9 @@ const Page: React.FC = () => {
             {sectionTitle}
           </h1>
           <Slider {...settings}>
-            {mockData.map((item, idx) => (
+            {mockData.map((item) => (
               <PortFolio
-                key={idx}
+                key={item.id}
                 image={item.image}
                 title={item.title}
                 description={item.description}
