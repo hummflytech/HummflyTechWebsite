@@ -34,25 +34,29 @@ export const PortFolio = ({
 }: PortFolioProps) => {
   return (
     <Card
-      className="w-[430px] h-[400px] border-[1px] border-[#CAFFEF] mt-5 ml-5 rounded-t-[22px] relative transition-transform duration-300 ease-in-out hover:scale-[1.01] hover:shadow-lg"
+      className=" sm:w-[70%] md:w-[95%] lg:max-w-[430px] h-[400px] border-[1px] border-[#CAFFEF] mt-5 mx-auto sm:mx-3 rounded-t-[22px] relative transition-transform duration-300 ease-in-out hover:scale-[1.01] hover:shadow-lg"
       style={{ backgroundColor: cardBackgroundColor }}
     >
       <CardHeader className="h-[230px] p-0">
         <Image
           src={typeof image === "string" ? image : image.src}
           alt={title}
-          className="w-full h-full object-cover rounded-t-[22px] "
-          width={300} // Replace with your actual image width
-          height={200} // Replace with your actual image height
+          className="w-full h-full object-cover rounded-t-[22px]"
+          width={300}
+          height={200}
         />
       </CardHeader>
       <CardContent className="flex flex-col mt-4 px-4">
         <CardTitle
-          className={`text-[18px] text-center mb-2 text-${titleTextColor}`}
+          className={`text-[18px] text-center mb-2`}
+          style={{ color: titleTextColor }}
         >
           {title}
         </CardTitle>
-        <CardDescription className={`text-[15px] text-${descriptionTextColor}`}>
+        <CardDescription
+          className={`text-[15px]`}
+          style={{ color: descriptionTextColor }}
+        >
           {description}
         </CardDescription>
       </CardContent>
