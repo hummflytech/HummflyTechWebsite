@@ -1,11 +1,11 @@
 import Home from "@/components/Home/home";
-import Services from "@/components/Service/services";
+import WhyChooseUs from "@/components/whyUs/whyChooseUs";
 
 export default function Page() {
   return (
     <div>
       <Home />
-      <Services />
+      <WhyChooseUs />
     </div>
   );
 }
