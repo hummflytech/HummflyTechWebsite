@@ -9,7 +9,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import Button from "../ui/button";
-import { FiMenu, FiX } from "react-icons/fi"; // Mobile menu icons
+import { FiMenu, FiX } from "react-icons/fi";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -17,12 +17,10 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
-        {/* Logo */}
         <div>
           <Image src="/images/logo.png" alt="Logo" width={244} height={42} />
         </div>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex flex-grow justify-center">
           <NavigationMenu>
             <NavigationMenuList className="flex items-center space-x-8 text-gray-700 font-bold">
@@ -67,7 +65,6 @@ const Header = () => {
           </NavigationMenu>
         </div>
 
-        {/* Button */}
         <div className="hidden md:block">
           <Button
             as="a"
@@ -80,7 +77,6 @@ const Header = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <div className="md:hidden">
           <button
             className="text-gray-700 focus:outline-none"
