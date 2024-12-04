@@ -1,5 +1,5 @@
+import Process from "@/components/process/process";
 import type React from "react";
-import Process from "./process";
 
 const ProcessPage: React.FC = () => {
   return <Process />;
