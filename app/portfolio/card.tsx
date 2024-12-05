@@ -48,13 +48,13 @@ export const PortFolio = ({
       </CardHeader>
       <CardContent className="flex flex-col mt-4 px-4">
         <CardTitle
-          className={`text-[18px] text-center mb-2`}
+          className="text-[18px] text-center mb-2"
           style={{ color: titleTextColor }}
         >
           {title}
         </CardTitle>
         <CardDescription
-          className={`text-[15px]`}
+          className={"text-[15px]"}
           style={{ color: descriptionTextColor }}
         >
           {description}
