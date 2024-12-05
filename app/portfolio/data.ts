@@ -6,7 +6,8 @@ export const mockData = [
     id: 1,
     image: img1,
     title: "E-Commerce Platform",
-    description: "Revitalized a leading e-commerce platform to enhance user experience and increase conversion rate.",
+    description:
+      "Revitalized a leading e-commerce platform to enhance user experience and increase conversion rate.",
   },
   {
     id: 2,
