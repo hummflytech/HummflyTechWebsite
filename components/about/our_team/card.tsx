@@ -14,7 +14,13 @@ interface TeamCardProps {
     facebook: string;
   };
 }
-const TeamCard = ({ name, role, description, image, socialLinks }: TeamCardProps) => {
+const TeamCard = ({
+  name,
+  role,
+  description,
+  image,
+  socialLinks,
+}: TeamCardProps) => {
   return (
     <div className="w-[280px] h-[320px] bg-[#2CCA9A] flex flex-col items-center gap-2 border-2 border-white text-white relative overflow-hidden group rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
       <Image
@@ -36,22 +42,34 @@ const TeamCard = ({ name, role, description, image, socialLinks }: TeamCardProps
       {/* Social icons */}
       <ul className="flex gap-6 z-20 mt-4">
         <li>
-          <a href={socialLinks.mail} className="transition-transform duration-300 hover:scale-125">
+          <a
+            href={socialLinks.mail}
+            className="transition-transform duration-300 hover:scale-125"
+          >
             <Mail size={20} />
           </a>
         </li>
         <li>
-          <a href={socialLinks.phone} className="transition-transform duration-300 hover:scale-125">
+          <a
+            href={socialLinks.phone}
+            className="transition-transform duration-300 hover:scale-125"
+          >
             <Phone size={20} />
           </a>
         </li>
         <li>
-          <a href={socialLinks.linkedin} className="transition-transform duration-300 hover:scale-125">
+          <a
+            href={socialLinks.linkedin}
+            className="transition-transform duration-300 hover:scale-125"
+          >
             <Linkedin size={20} />
           </a>
         </li>
         <li>
-          <a href={socialLinks.facebook} className="transition-transform duration-300 hover:scale-125">
+          <a
+            href={socialLinks.facebook}
+            className="transition-transform duration-300 hover:scale-125"
+          >
             <Facebook size={20} />
           </a>
         </li>

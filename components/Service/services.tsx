@@ -2,7 +2,7 @@ import SimpleCard from "@/components/Service/servicesCard";
 
 export default function Services() {
   return (
-    <div>
+    <div id="services">
       <div className=" text-center py-12 pb-4">
         <h1 className="text-4xl font-poppins text-[#FF4500] font-semibold text-[40px]">
           Our Services

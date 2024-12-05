@@ -2,11 +2,11 @@ import ContactUS from "@/components/ContactUs/contactus";
 import Footer from "@/components/Home/footer";
 import Home from "@/components/Home/home";
 import Services from "@/components/Service/services";
+import Portfolio from "@/components/portfolio/portfolio";
 import Process from "@/components/process/process";
+import TestimonialList from "@/components/testimonials/testimonials";
 import WhyChooseUs from "@/components/whyUs/whyChooseUs";
-import About from "./about/page";
-import Portfolio from "./portfolio/page";
-import TestimonialList from "./testimonials/page";
+import About from "../components/about/page";
 
 export default function Page() {
   return (
@@ -14,9 +14,9 @@ export default function Page() {
       <Home />
       <About />
       <Services />
-      <Portfolio />
-      <Process />
       <WhyChooseUs />
+      <Process />
+      <Portfolio />
       <TestimonialList />
       <ContactUS />
       <Footer />

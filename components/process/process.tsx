@@ -3,7 +3,7 @@ import { processSteps } from "./steps";
 
 const Process = () => {
   return (
-    <div className="relative min-h-screen bg-gray-50">
+    <div id="process" className="relative min-h-screen bg-gray-50">
       <div
         className="relative bg-cover bg-center min-h-screen"
         style={{ backgroundImage: "url('/images/HummflyBirdBg.png')" }}

@@ -92,7 +92,10 @@ const Portfolio: React.FC = () => {
   };
 
   return (
-    <div className="mx-auto mt-16 mb-20 px-4 max-w-[1400px] lg:px-2">
+    <div
+      id="portfolio"
+      className="mx-auto mt-16 mb-20 px-4 max-w-[1400px] lg:px-2"
+    >
       <h1 className="text-[40px] font-bold text-[#1A906B] text-center">
         Our Portfolio
       </h1>

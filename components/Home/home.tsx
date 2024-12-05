@@ -3,7 +3,10 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-teal-200 to-white flex items-center justify-center">
+    <div
+      id="home"
+      className="min-h-screen bg-gradient-to-b from-teal-200 to-white flex items-center justify-center"
+    >
       <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24 -mt-20">
         <div className="text-left max-w-lg w-full">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-snug">

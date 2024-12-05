@@ -5,7 +5,6 @@ import Image from "next/image";
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import Button from "../ui/button";
@@ -14,75 +13,98 @@ import { FiMenu, FiX } from "react-icons/fi";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Scroll to section smoothly
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsMobileMenuOpen(false); // Close mobile menu after click
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+      <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2">
+        {/* Logo */}
         <div>
-          <Image src="/images/logo.png" alt="Logo" width={244} height={42} />
+          <Image src="/images/logo.png" alt="Logo" width={180} height={32} />
         </div>
 
+        {/* Desktop Navigation */}
         <div className="hidden md:flex flex-grow justify-center">
           <NavigationMenu>
-            <NavigationMenuList className="flex items-center space-x-8 text-gray-700 font-bold">
+            <NavigationMenuList className="flex items-center space-x-6 text-gray-700 font-bold text-sm">
               <NavigationMenuItem>
-                <NavigationMenuLink href="/" className="hover:text-secondary">
+                <button
+                  onClick={() => scrollToSection("home")}
+                  className="hover:text-secondary focus:outline-none"
+                >
                   Home
-                </NavigationMenuLink>
+                </button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/about"
-                  className="hover:text-secondary"
+                <button
+                  onClick={() => scrollToSection("about")}
+                  className="hover:text-secondary focus:outline-none"
                 >
                   About Us
-                </NavigationMenuLink>
+                </button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/services"
-                  className="hover:text-secondary"
+                <button
+                  onClick={() => scrollToSection("services")}
+                  className="hover:text-secondary focus:outline-none"
                 >
                   Services
-                </NavigationMenuLink>
+                </button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/portfolio"
-                  className="hover:text-secondary"
+                <button
+                  onClick={() => scrollToSection("procecss")}
+                  className="hover:text-secondary focus:outline-none"
+                >
+                  Process
+                </button>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <button
+                  onClick={() => scrollToSection("portfolio")}
+                  className="hover:text-secondary focus:outline-none"
                 >
                   Portfolio
-                </NavigationMenuLink>
+                </button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/testimonials"
-                  className="hover:text-secondary"
+                <button
+                  onClick={() => scrollToSection("testimonials")}
+                  className="hover:text-secondary focus:outline-none"
                 >
                   Testimonials
-                </NavigationMenuLink>
+                </button>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
 
+        {/* Contact Button */}
         <div className="hidden md:block">
           <Button
-            as="a"
-            href="/contact"
+            onClick={() => scrollToSection("contact")}
             variant="outline"
             rounded="rounded-full"
-            className="px-4 py-2"
+            className="px-3 py-1 text-sm"
           >
             Get in Touch →
           </Button>
         </div>
 
+        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
             className="text-gray-700 focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            {isMobileMenuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
           </button>
         </div>
       </div>
@@ -91,54 +113,53 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-md">
           <NavigationMenu>
-            <NavigationMenuList className="flex flex-col items-center space-y-4 text-gray-700 font-bold p-4">
+            <NavigationMenuList className="flex flex-col items-center space-y-4 text-gray-700 font-bold text-sm p-4">
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/"
-                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200"
+                <button
+                  onClick={() => scrollToSection("home")}
+                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
                 >
                   Home
-                </NavigationMenuLink>
+                </button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/about"
-                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200"
+                <button
+                  onClick={() => scrollToSection("about")}
+                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
                 >
                   About Us
-                </NavigationMenuLink>
+                </button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/services"
-                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200"
+                <button
+                  onClick={() => scrollToSection("services")}
+                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
                 >
                   Services
-                </NavigationMenuLink>
+                </button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/portfolio"
-                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200"
+                <button
+                  onClick={() => scrollToSection("portfolio")}
+                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
                 >
                   Portfolio
-                </NavigationMenuLink>
+                </button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/testimonials"
-                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-200"
+                <button
+                  onClick={() => scrollToSection("testimonials")}
+                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
                 >
                   Testimonials
-                </NavigationMenuLink>
+                </button>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Button
-                  as="a"
-                  href="/contact"
+                  onClick={() => scrollToSection("contact")}
                   variant="outline"
                   rounded="rounded-full"
-                  className="px-4 py-2 w-full text-center"
+                  className="px-3 py-1 w-full text-center text-sm"
                 >
                   Get in Touch →
                 </Button>
