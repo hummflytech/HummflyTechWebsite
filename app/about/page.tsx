@@ -39,7 +39,7 @@ const About = () => {
             <ArrowRight size={20} />
           </CustomButton>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 hidden lg:block">
           <Image
             src={aboutImg}
             alt="About Us"
