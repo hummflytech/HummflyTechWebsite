@@ -1,11 +1,13 @@
 import Home from "@/components/Home/home";
-import Services from "@/components/Service/services";
+import Process from "@/components/process/process";
+import WhyChooseUs from "@/components/whyUs/whyChooseUs";
 
 export default function Page() {
   return (
     <div>
       <Home />
-      <Services />
+      <WhyChooseUs />
+      <Process />
     </div>
   );
 }

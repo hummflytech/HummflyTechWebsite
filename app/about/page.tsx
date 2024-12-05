@@ -7,7 +7,7 @@ import aboutImg from "../../public/images/AboutUsSection.png";
 import aboutWoman from "../../public/images/aboutuswoman.png";
 const Page = () => {
   return (
-    <div className="flex flex-col gap-28 max-w-[1440px] mx-auto px-6 lg:px-16 mb-14">
+    <div className="flex flex-col gap-28 max-w-[1440px] mx-auto px-6 lg:px-16 mb-14 mt-16">
       {/* About Section */}
       <div className="flex flex-col lg:flex-row items-center gap-24 lg:gap-24 text-center lg:text-left">
         <div className="flex-1">
