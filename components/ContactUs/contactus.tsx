@@ -8,7 +8,7 @@ export default function Page() {
           };
   return (
 
-    <div className="min-h-screen flex p-6  bg-white  shadow-lg shadow-[#919b99] w-[1150px] mr-auto mb-[300px] ml-[100px]  rounded "
+    <div className="min-h-screen flex p-6  bg-white  shadow-lg shadow-[#919b99] w-[1150px] mr-auto mb-20 ml-[100px]  rounded "
         > 
    <div className="text-center py-12 pb-4 ml-20 w-full max-w-xs">
         <h1 className="text-left text-[41px] font-bold text-[#00B188] "> Get In touch</h1>
@@ -37,6 +37,7 @@ export default function Page() {
              id="Email"
              placeholder=""
              onChange={handleInputChange}
+             required
            /> <br/>
            
 
@@ -115,8 +116,12 @@ export default function Page() {
       height={30}
       className=""
     />
-    <h3 className="text-gray-700">contact@hummflytech.com</h3>
-  </div></a>
+  <h3 
+  className="text-gray-700">
+      contact@hummflytech.com
+      </h3>
+  </div>
+  </a>
  
   </div>
 </div>
