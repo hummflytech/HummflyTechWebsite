@@ -37,7 +37,7 @@ const SlickArrowRight: React.FC<ArrowProps> = ({ onClick }) => (
   />
 );
 
-const Page: React.FC = () => {
+const Portfolio: React.FC = () => {
   const settings: Settings = {
     dots: true,
     infinite: true,
@@ -88,7 +88,7 @@ const Page: React.FC = () => {
         Our Portfolio
       </h1>
 
-      <p className="text-[24px] text-center mt-6 mb-10 max-w-[900px] mx-auto">
+      <p className="text-[24px] text-left mt-6 mb-10 max-w-[1200px] mx-auto">
         Explore some of our recent projects to see how we’ve helped businesses
         across various industries achieve their digital goals.
       </p>
@@ -125,4 +125,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default Portfolio;
