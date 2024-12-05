@@ -1,4 +1,7 @@
+import ContactUS from "@/components/ContactUs/contactus";
+import Footer from "@/components/Home/footer";
 import Home from "@/components/Home/home";
+import Services from "@/components/Service/services";
 import Process from "@/components/process/process";
 import WhyChooseUs from "@/components/whyUs/whyChooseUs";
 import About from "./about/page";
@@ -10,10 +13,13 @@ export default function Page() {
     <div>
       <Home />
       <About />
+      <Services />
       <Portfolio />
+      <Process />
       <WhyChooseUs />
       <TestimonialList />
-      <Process />
+      <ContactUS />
+      <Footer />
     </div>
   );
 }

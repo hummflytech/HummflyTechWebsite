@@ -8,12 +8,7 @@ interface TestimonialProps {
   description: string;
 }
 
-const TestimonialCard = ({
-  index,
-  image,
-  title,
-  description,
-}: TestimonialProps) => {
+const TestimonialCard = ({ index, image, title, description }: TestimonialProps) => {
   const bgColor = index % 2 === 0 ? "bg-[#8ECCB963]" : "bg-white"; // Conditional background color
 
   return (
@@ -29,12 +24,8 @@ const TestimonialCard = ({
           height={100}
         />
       </div>
-      <h2 className="text-[16px] sm:text-[18px] lg:text-[20px] font-semibold text-center">
-        {title}
-      </h2>
-      <p className="text-[14px] sm:text-[16px] lg:text-[18px] text-center px-2 sm:px-4">
-        {description}
-      </p>
+      <h2 className="text-[16px] sm:text-[18px] lg:text-[20px] font-semibold text-center">{title}</h2>
+      <p className="text-[14px] sm:text-[16px] lg:text-[18px] text-center px-2 sm:px-4">{description}</p>
     </div>
   );
 };

@@ -52,9 +52,7 @@ const TestimonialList = () => {
 
   return (
     <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden overflow-y-hidden mb-16">
-      <h1 className="text-[32px] sm:text-[36px] font-bold mt-16 text-[#1A906B] text-center mb-10">
-        Testimonials
-      </h1>
+      <h1 className="text-[32px] sm:text-[36px] font-bold mt-16 text-[#1A906B] text-center mb-10">Testimonials</h1>
       <Slider {...settings} ref={sliderRef}>
         {testimonials.map((testimonial, index) => (
           <div className="px-4" key={testimonial.id}>

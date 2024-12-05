@@ -84,24 +84,16 @@ const Portfolio: React.FC = () => {
 
   return (
     <div className="mx-auto mt-16 mb-20 px-4 max-w-[1400px] lg:px-2">
-      <h1 className="text-[40px] font-bold text-[#1A906B] text-center">
-        Our Portfolio
-      </h1>
+      <h1 className="text-[40px] font-bold text-[#1A906B] text-center">Our Portfolio</h1>
 
       <p className="text-[24px] text-left mt-6 mb-10 max-w-[1200px] mx-auto">
-        Explore some of our recent projects to see how we’ve helped businesses
-        across various industries achieve their digital goals.
+        Explore some of our recent projects to see how we’ve helped businesses across various industries achieve their
+        digital goals.
       </p>
 
-      {[
-        "Website Development",
-        "Mobile Application Development",
-        "UI/UX Design",
-      ].map((sectionTitle, index) => (
+      {["Website Development", "Mobile Application Development", "UI/UX Design"].map((sectionTitle, index) => (
         <div key={sectionTitle} className="mt-20 mb-10 w-full relative">
-          <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10 mx-auto">
-            {sectionTitle}
-          </h1>
+          <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10 mx-auto">{sectionTitle}</h1>
           <div className="max-w-[1400px] md:max-w-[900px] lg:max-w-[1440px] mx-auto">
             <Slider {...settings}>
               {mockData.map((item) => (
