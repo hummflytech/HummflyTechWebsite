@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { LuInstagram } from "react-icons/lu";
 import { FaTelegram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";

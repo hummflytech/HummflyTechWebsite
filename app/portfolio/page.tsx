@@ -1,15 +1,15 @@
 "use client";
-import type React from "react";
+import React, { useState, useRef } from "react";
 import Slider, { type Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
-import im2 from "../../public/images/Back.png"; // Left Arrow Image
-import im1 from "../../public/images/Forward.png"; // Right Arrow Image
+import im2 from "../../public/images/Back.png";
+import im1 from "../../public/images/Forward.png";
 import { PortFolio } from "./card";
 import { mockData } from "./data";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-// Define the props type for the custom arrow components
 interface ArrowProps {
   onClick?: () => void;
   className?: string;
@@ -38,6 +38,15 @@ const SlickArrowRight: React.FC<ArrowProps> = ({ onClick }) => (
 );
 
 const Portfolio: React.FC = () => {
+  const [expanded, setExpanded] = useState(false);
+  const webDevRef = useRef<HTMLDivElement | null>(null);
+
+  const handleExpand = () => setExpanded(true);
+  const handleShrink = () => {
+    setExpanded(false);
+    webDevRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const settings: Settings = {
     dots: true,
     infinite: true,
@@ -54,7 +63,7 @@ const Portfolio: React.FC = () => {
     ),
     responsive: [
       {
-        breakpoint: 1334, // Tablets and smaller desktops
+        breakpoint: 1334,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -62,7 +71,7 @@ const Portfolio: React.FC = () => {
         },
       },
       {
-        breakpoint: 908, // Mobile devices (medium screens)
+        breakpoint: 908,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -71,7 +80,7 @@ const Portfolio: React.FC = () => {
         },
       },
       {
-        breakpoint: 480, // Small mobile devices
+        breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -84,35 +93,97 @@ const Portfolio: React.FC = () => {
 
   return (
     <div className="mx-auto mt-16 mb-20 px-4 max-w-[1400px] lg:px-2">
-      <h1 className="text-[40px] font-bold text-[#1A906B] text-center">Our Portfolio</h1>
+      <h1 className="text-[40px] font-bold text-[#1A906B] text-center">
+        Our Portfolio
+      </h1>
 
       <p className="text-[24px] text-left mt-6 mb-10 max-w-[1200px] mx-auto">
-        Explore some of our recent projects to see how we’ve helped businesses across various industries achieve their
-        digital goals.
+        Explore some of our recent projects to see how we’ve helped businesses
+        across various industries achieve their digital goals.
       </p>
 
-      {["Website Development", "Mobile Application Development", "UI/UX Design"].map((sectionTitle, index) => (
-        <div key={sectionTitle} className="mt-20 mb-10 w-full relative">
-          <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10 mx-auto">{sectionTitle}</h1>
-          <div className="max-w-[1400px] md:max-w-[900px] lg:max-w-[1440px] mx-auto">
-            <Slider {...settings}>
-              {mockData.map((item) => (
-                <PortFolio
-                  key={item.id}
-                  image={item.image}
-                  title={item.title}
-                  description={item.description}
-                  cardBackgroundColor={index === 1 ? "white" : undefined}
-                  descriptionTextColor={index === 1 ? "black" : undefined}
-                  titleTextColor={index === 1 ? "black" : undefined}
-                  buttonBackgroundColor={index === 1 ? "#20B486" : undefined}
-                  buttonTextColor={index === 1 ? "white" : undefined}
-                />
-              ))}
-            </Slider>
+      <div ref={webDevRef} className="mt-20 mb-10 w-full relative">
+        <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10 mx-auto">
+          Website Development
+        </h1>
+        <div className="max-w-[1400px] md:max-w-[900px] lg:max-w-[1440px] mx-auto">
+          <Slider {...settings}>
+            {mockData.map((item) => (
+              <PortFolio
+                key={item.id}
+                image={item.image}
+                title={item.title}
+                description={item.description}
+              />
+            ))}
+          </Slider>
+        </div>
+      </div>
+
+      {!expanded && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={handleExpand}
+            className="bg-[#1A906B] text-white rounded-full p-4 shadow-lg hover:bg-[#20B486] transition-all duration-300"
+          >
+            <FaChevronDown className="text-2xl" />
+          </button>
+        </div>
+      )}
+
+      {expanded && (
+        <div className="mt-10">
+          <div className="mt-20 mb-10 w-full relative">
+            <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10 mx-auto">
+              Mobile Application Development
+            </h1>
+            <div className="max-w-[1400px] md:max-w-[900px] lg:max-w-[1440px] mx-auto">
+              <Slider {...settings}>
+                {mockData.map((item) => (
+                  <PortFolio
+                    key={item.id}
+                    image={item.image}
+                    title={item.title}
+                    description={item.description}
+                    cardBackgroundColor="white"
+                    descriptionTextColor="black"
+                    titleTextColor="black"
+                    buttonBackgroundColor="#20B486"
+                    buttonTextColor="white"
+                  />
+                ))}
+              </Slider>
+            </div>
+          </div>
+
+          <div className="mt-20 mb-10 w-full relative">
+            <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10 mx-auto">
+              UI/UX Design
+            </h1>
+            <div className="max-w-[1400px] md:max-w-[900px] lg:max-w-[1440px] mx-auto">
+              <Slider {...settings}>
+                {mockData.map((item) => (
+                  <PortFolio
+                    key={item.id}
+                    image={item.image}
+                    title={item.title}
+                    description={item.description}
+                  />
+                ))}
+              </Slider>
+            </div>
+          </div>
+
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={handleShrink}
+              className="bg-[#1A906B] text-white rounded-full p-4 shadow-lg hover:bg-[#20B486] transition-all duration-300"
+            >
+              <FaChevronUp className="text-2xl" />
+            </button>
           </div>
         </div>
-      ))}
+      )}
     </div>
   );
 };
