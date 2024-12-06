@@ -33,7 +33,7 @@ const About = () => {
           </p>
           <CustomButton
             as="a"
-            href="about/our_team"
+            href="/our_team"
             variant="primary"
             rounded="rounded-full"
             className="mt-8 px-6 py-3 sm:px-8 sm:py-4 shadow-lg hover:bg-[#1A906B]/90"
