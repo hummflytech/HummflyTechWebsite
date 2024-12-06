@@ -60,7 +60,7 @@ const Header = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <button
-                  onClick={() => scrollToSection("procecss")}
+                  onClick={() => scrollToSection("process")}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Process
@@ -89,7 +89,7 @@ const Header = () => {
         {/* Contact Button */}
         <div className="hidden md:block">
           <Button
-            onClick={() => scrollToSection("contact")}
+            onClick={() => scrollToSection("contactus")}
             variant="outline"
             rounded="rounded-full"
             className="px-3 py-1 text-sm"
