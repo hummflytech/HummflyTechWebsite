@@ -2,17 +2,16 @@
 import React, { useRef, useEffect } from "react";
 import Slider from "react-slick";
 import TestimonialCard from "./card";
-import { testimonials } from "./data"; // Mock data for testimonials
+import { testimonials } from "./data";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const TestimonialList = () => {
-  const sliderRef = useRef<Slider | null>(null); // Explicitly type the ref as Slider or null
+  const sliderRef = useRef<Slider | null>(null);
 
   useEffect(() => {
-    // Set up a timer to auto-advance slides every 3 seconds
     const interval = setInterval(() => {
-      sliderRef.current?.slickNext(); // Move to the next slide
+      sliderRef.current?.slickNext();
     }, 3000);
 
     return () => clearInterval(interval); // Cleanup the interval on component unmount
@@ -40,11 +39,11 @@ const TestimonialList = () => {
         },
       },
       {
-        breakpoint: 480, // For mobile devices
+        breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false, // Hide arrows on smaller screens
+          arrows: false,
         },
       },
     ],
