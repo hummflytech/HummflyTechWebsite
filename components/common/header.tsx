@@ -2,18 +2,21 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import Button from "../ui/button";
+import Button from "@/components/ui/button";
 import { FiMenu, FiX } from "react-icons/fi";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname(); // Get the current route
 
-  // Scroll to section smoothly
+  // Smoothly scroll to section if on the same page
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
@@ -22,12 +25,25 @@ const Header = () => {
     }
   };
 
+  // Handle navigation for both same-page and cross-route
+  const handleNavigation = (id: string) => {
+    if (pathname === "/") {
+      // If already on the Home page, scroll smoothly
+      scrollToSection(id);
+    } else {
+      // Navigate to Home page and let smooth scrolling occur there
+      window.location.href = `/#${id}`;
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2">
         {/* Logo */}
         <div>
-          <Image src="/images/logo.png" alt="Logo" width={180} height={32} />
+          <Link href="/">
+            <Image src="/images/logo.png" alt="Logo" width={180} height={32} />
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
@@ -36,7 +52,7 @@ const Header = () => {
             <NavigationMenuList className="flex items-center space-x-6 text-gray-700 font-bold text-sm">
               <NavigationMenuItem>
                 <button
-                  onClick={() => scrollToSection("home")}
+                  onClick={() => handleNavigation("home")}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Home
@@ -44,7 +60,7 @@ const Header = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <button
-                  onClick={() => scrollToSection("about")}
+                  onClick={() => handleNavigation("about")}
                   className="hover:text-secondary focus:outline-none"
                 >
                   About Us
@@ -52,7 +68,7 @@ const Header = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <button
-                  onClick={() => scrollToSection("services")}
+                  onClick={() => handleNavigation("services")}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Services
@@ -60,7 +76,7 @@ const Header = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <button
-                  onClick={() => scrollToSection("process")}
+                  onClick={() => handleNavigation("process")}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Process
@@ -68,7 +84,7 @@ const Header = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <button
-                  onClick={() => scrollToSection("portfolio")}
+                  onClick={() => handleNavigation("portfolio")}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Portfolio
@@ -76,7 +92,7 @@ const Header = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <button
-                  onClick={() => scrollToSection("testimonials")}
+                  onClick={() => handleNavigation("testimonials")}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Testimonials
@@ -89,7 +105,7 @@ const Header = () => {
         {/* Contact Button */}
         <div className="hidden md:block">
           <Button
-            onClick={() => scrollToSection("contactus")}
+            onClick={() => handleNavigation("contactus")}
             variant="outline"
             rounded="rounded-full"
             className="px-3 py-1 text-sm"
@@ -116,7 +132,7 @@ const Header = () => {
             <NavigationMenuList className="flex flex-col items-center space-y-4 text-gray-700 font-bold text-sm p-4">
               <NavigationMenuItem>
                 <button
-                  onClick={() => scrollToSection("home")}
+                  onClick={() => handleNavigation("home")}
                   className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
                 >
                   Home
@@ -124,7 +140,7 @@ const Header = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <button
-                  onClick={() => scrollToSection("about")}
+                  onClick={() => handleNavigation("about")}
                   className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
                 >
                   About Us
@@ -132,7 +148,7 @@ const Header = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <button
-                  onClick={() => scrollToSection("services")}
+                  onClick={() => handleNavigation("services")}
                   className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
                 >
                   Services
@@ -140,23 +156,15 @@ const Header = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <button
-                  onClick={() => scrollToSection("portfolio")}
+                  onClick={() => handleNavigation("portfolio")}
                   className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
                 >
                   Portfolio
                 </button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <button
-                  onClick={() => scrollToSection("testimonials")}
-                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
-                >
-                  Testimonials
-                </button>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
                 <Button
-                  onClick={() => scrollToSection("contact")}
+                  onClick={() => handleNavigation("contactus")}
                   variant="outline"
                   rounded="rounded-full"
                   className="px-3 py-1 w-full text-center text-sm"

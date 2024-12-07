@@ -9,9 +9,9 @@ export default function Page() {
   return (
     <div
       id="contactus"
-      className="min-h-screen flex flex-col lg:flex-row p-6 bg-white shadow-lg shadow-[#919b99] mx-[50px] mb-20 ml-4 lg:ml-[100px] rounded"
+      className="min-h-screen flex flex-col lg:flex-row p-6 bg-white shadow-lg shadow-[#919b99] mx-[50px] mb-20 ml-4 lg:ml-14 rounded"
     >
-      <div className="text-center py-12 pb-4 w-full max-w-xs mx-auto lg:mx-0 lg:text-left">
+      <div className="text-center py-12 pb-4 w-full max-w-xs mx-auto lg:mx-0 lg:text-left lg:ml-8">
         <h1 className="text-left text-[41px] font-bold text-[#00B188]">
           Get In touch
         </h1>
