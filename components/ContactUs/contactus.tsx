@@ -1,9 +1,50 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Page() {
-  const handleInputChange = (): void => {
-    console.log("clicked");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    const YOUR_SERVICE_ID = "service_heks16s";
+    const YOUR_TEMPLATE_ID = "template_trq93t4";
+    const YOUR_PUBLIC_KEY = "9ltGQOMzE78qnrrhZ";
+
+    emailjs
+      .send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, formData, {
+        publicKey: YOUR_PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          alert("Email sent successfully!");
+        },
+
+        (error) => {
+          console.log("FAILED...", error.text);
+          alert("Failed to send email Check your internet!");
+        },
+      );
+
+    // Reset the form
+    // setFormData({ name: '', email: '', message: '' });
   };
 
   return (
@@ -18,16 +59,18 @@ export default function Page() {
         <h2 className="text-lg text-gray-700">
           We are here for you! How can we help?
         </h2>
-        <form className="mb-2 mt-4">
+        <form onSubmit={handleSubmit} className="mb-2 mt-4">
           <div className="mt-2">
             <label htmlFor="Name" className="block text-left">
               Name:
             </label>
             <input
-              className="focus:outline-[#00B188] border-[#00B188] focus:shadow-outline border border-black-300 rounded w-full lg:w-[310px] h-10"
+              className="focus:outline-[#00B188] border-[#00B188] focus:shadow-outline border pl-2 border-black-300 rounded w-full lg:w-[310px] h-10"
               type="text"
               id="Name"
-              placeholder=""
+              name="name"
+              placeholder="john"
+              value={formData.name}
               onChange={handleInputChange}
             />
           </div>
@@ -37,24 +80,29 @@ export default function Page() {
               Email:
             </label>
             <input
-              className="focus:outline-[#00B188] border-[#00B188] focus:shadow-outline border border-black-300 rounded w-full lg:w-[310px] h-10 mt-2"
+              className="focus:outline-[#00B188] border-[#00B188] focus:shadow-outline border pl-2 border-black-300 rounded w-full lg:w-[310px] h-10 mt-2"
               type="email"
               id="Email"
-              placeholder=""
+              name="email"
+              placeholder="example@gmail.com"
               onChange={handleInputChange}
+              value={formData.email}
               required
             />
           </div>
 
           <div className="mt-4">
-            <label htmlFor="Message" className="block text-left">
+            <label htmlFor="Message" className="block text-left pl-2">
               Message:
             </label>
             <textarea
               id="Message"
               className="w-full p-4 border resize-y focus:outline-[#00B188] border-[#00B188] rounded mt-2"
               rows={2}
+              name="message"
               placeholder="Enter your text here..."
+              value={formData.message}
+              onChange={handleInputChange}
             />
           </div>
 
