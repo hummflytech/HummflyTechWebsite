@@ -20,7 +20,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Email address"
-                className="flex-grow px-4 py-2 rounded-l-[10px] border border-gray-400 focus:outline-none"
+                className="flex-grow px-4 py-2 rounded-l-[10px] border border-gray-400 focus:outline-none text-stone-950"
               />
               <button className="bg-teal-600 text-white px-4 py-2 rounded-r-[10px] hover:bg-teal-600">
                 Subscribe
