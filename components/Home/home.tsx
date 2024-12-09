@@ -9,7 +9,7 @@ const Home = () => {
     >
       <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24 -mt-20">
         <div className="text-left max-w-lg w-full">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-snug">
+          <h1 className="text-[34px] sm:text-[38px] md:text-[38px] font-bold text-gray-800 leading-snug">
             Transforming <span className="text-orange-500">Ideas</span> into
             Impactful Digital Solutions
           </h1>

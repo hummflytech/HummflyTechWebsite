@@ -5,10 +5,11 @@ import { teamData } from "./data";
 
 const TeamPage = () => {
   return (
-    <div>
-      <div className="bg-[#2CCA9A] min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-[36px] font-bold mt-16 text-white">Meet Our Team</h1>
-        <p className="text-[20px] mb-10 mt-6 text-center text-white">
+    <>
+    <div className="bg-[#2CCA9A] pt-10 pb-10">
+      <div className="bg-white flex flex-col items-center justify-center max-w-[1450px] max-h-[1400px] m-auto">
+        <h1 className="text-[36px] font-bold mt-16">Meet Our Team</h1>
+        <p className="text-[20px] mb-10 mt-6 text-center">
           Get to know the passionate and talented individuals who drive our mission forward.
         </p>
         <div className="flex flex-wrap gap-8 justify-center max-w-7xl mx-auto p-2 mb-10">
@@ -23,9 +24,10 @@ const TeamPage = () => {
             />
           ))}
         </div>
-        <Footer />
       </div>
     </div>
+        <Footer />
+    </>
   );
 };
 
