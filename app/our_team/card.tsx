@@ -14,13 +14,7 @@ interface TeamCardProps {
     facebook: string;
   };
 }
-const TeamCard = ({
-  name,
-  role,
-  description,
-  image,
-  socialLinks,
-}: TeamCardProps) => {
+const TeamCard = ({ name, role, description, image, socialLinks }: TeamCardProps) => {
   return (
     <div className="w-[280px] h-[320px] flex flex-col items-center gap-2 border-2 border-white relative overflow-hidden group rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
       <Image
