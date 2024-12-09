@@ -29,7 +29,7 @@ const TestimonialCard = ({
           height={100}
         />
       </div>
-      <h2 className="text-[16px] sm:text-[18px] lg:text-[20px] font-semibold text-center">
+      <h2 className="text-[16px] sm:text-[18px] lg:text-[20px] font-semibold text-center text-[#F87316]">
         {title}
       </h2>
       <p className="text-[14px] sm:text-[16px] lg:text-[18px] text-center px-2 sm:px-4">
