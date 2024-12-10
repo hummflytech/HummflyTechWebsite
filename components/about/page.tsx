@@ -15,14 +15,14 @@ const About = () => {
       {/* About Section */}
       <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 text-center lg:text-left">
         <div className="flex-1">
-          <h1 className="text-[32px] sm:text-[40px] text-[#1A906B] font-bold">
+          <h1 className="text-[30px] sm:text-[32px] lg:text-[36px] text-[#1A906B] font-bold">
             About Us
           </h1>
-          <h2 className="text-[24px] sm:text-[36px] lg:text-[38px] font-semibold mt-4">
+          <h2 className="text-[22px] sm:text-[28px] lg:text-[32px] font-semibold mt-4">
             <span className="text-[#FF4500]">Hummfly Tech</span> Providing The
             Best Software Solution To The Companies Around The Globe.
           </h2>
-          <p className="mt-6 text-[16px] sm:text-[18px] leading-relaxed text-gray-600">
+          <p className="mt-6 text-[16px] sm:text-[16px] leading-relaxed text-gray-600">
             Forward-thinking software development agency dedicated to helping
             businesses thrive in the digital world. With a focus on technology
             innovation, user-centric design, and robust development practices,
@@ -42,7 +42,7 @@ const About = () => {
             <ArrowRight size={20} />
           </CustomButton>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 hidden lg:block">
           <Image
             src={aboutImg}
             alt="About Us"
@@ -57,7 +57,7 @@ const About = () => {
       {/* Mission and Vision Section */}
       <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 text-center lg:text-left">
         <div className="flex-1">
-          <div className="bg-[#F2F2F2] rounded-lg p-4 w-full max-w-sm sm:max-w-md mx-auto lg:mx-0">
+          <div className="bg-[#F2F2F2] rounded-lg p-4 w-full max-w-sm sm:max-w-md mx-auto lg:mx-0 ">
             <Image
               src={aboutWoman}
               alt="About Woman"

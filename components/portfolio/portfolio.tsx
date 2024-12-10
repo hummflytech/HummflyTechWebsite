@@ -94,22 +94,22 @@ const Portfolio: React.FC = () => {
   return (
     <div
       id="portfolio"
-      className="mx-auto mt-16 mb-20 px-4 max-w-[1400px] lg:px-2"
+      className="mx-auto mt-16 mb-20 px-4 md:px-6 lg:px-10 max-w-[1400px] overflow-hidden"
     >
       <h1 className="text-[40px] font-bold text-[#1A906B] text-center">
         Our Portfolio
       </h1>
 
-      <p className="text-[24px] text-left mt-6 mb-10 max-w-[1200px] mx-auto">
+      <p className="text-[20px] text-left mt-6 mb-10 max-w-[1200px] mx-auto">
         Explore some of our recent projects to see how we’ve helped businesses
         across various industries achieve their digital goals.
       </p>
 
-      <div ref={webDevRef} className="mt-20 mb-10 w-full relative">
-        <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10 mx-auto">
+      <div ref={webDevRef} className="mt-20 mb-10 w-full">
+        <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10">
           Website Development
         </h1>
-        <div className="max-w-[1400px] md:max-w-[900px] lg:max-w-[1440px] mx-auto">
+        <div className="w-full max-w-[1400px] mx-auto">
           <Slider {...settings}>
             {mockData.map((item) => (
               <PortFolio
@@ -136,11 +136,11 @@ const Portfolio: React.FC = () => {
 
       {expanded && (
         <div className="mt-10">
-          <div className="mt-20 mb-10 w-full relative">
-            <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10 mx-auto">
+          <div className="mt-20 mb-10 w-full">
+            <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10">
               Mobile Application Development
             </h1>
-            <div className="max-w-[1400px] md:max-w-[900px] lg:max-w-[1440px] mx-auto">
+            <div className="w-full max-w-[1400px] mx-auto">
               <Slider {...settings}>
                 {mockData.map((item) => (
                   <PortFolio
@@ -148,22 +148,17 @@ const Portfolio: React.FC = () => {
                     image={item.image}
                     title={item.title}
                     description={item.description}
-                    cardBackgroundColor="white"
-                    descriptionTextColor="black"
-                    titleTextColor="black"
-                    buttonBackgroundColor="#20B486"
-                    buttonTextColor="white"
                   />
                 ))}
               </Slider>
             </div>
           </div>
 
-          <div className="mt-20 mb-10 w-full relative">
-            <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10 mx-auto">
+          <div className="mt-20 mb-10 w-full">
+            <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10">
               UI/UX Design
             </h1>
-            <div className="max-w-[1400px] md:max-w-[900px] lg:max-w-[1440px] mx-auto">
+            <div className="w-full max-w-[1400px] mx-auto">
               <Slider {...settings}>
                 {mockData.map((item) => (
                   <PortFolio
