@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   NavigationMenu,
@@ -11,6 +10,8 @@ import {
 } from "@/components/ui/navigation-menu";
 import Button from "@/components/ui/button";
 import { FiMenu, FiX } from "react-icons/fi";
+
+import { Link } from 'react-scroll';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -38,11 +39,14 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2">
+      <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
         {/* Logo */}
         <div>
-          <Link href="/">
-            <Image src="/images/logo.png" alt="Logo" width={180} height={32} />
+          <Link
+           to = "home"
+           smooth={true}
+           >
+            <Image src="/images/logo.png" alt="Logo" width={180} height={32} className="cursor-pointer"/>
           </Link>
         </div>
 
@@ -51,52 +55,64 @@ const Header = () => {
           <NavigationMenu>
             <NavigationMenuList className="flex items-center space-x-6 text-gray-700 font-bold text-sm">
               <NavigationMenuItem>
-                <button
-                  onClick={() => handleNavigation("home")}
+                <Link
+                  to="home"
+                  smooth={true}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Home
-                </button>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <button
-                  onClick={() => handleNavigation("about")}
+                <Link
+                  to="about"
+                  smooth={true}
+                  // duration={1000}
+                  offset={-100}
                   className="hover:text-secondary focus:outline-none"
                 >
                   About Us
-                </button>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <button
-                  onClick={() => handleNavigation("services")}
+                <Link
+                  to="services"
+                  smooth={true}
+                  offset={-30}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Services
-                </button>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <button
-                  onClick={() => handleNavigation("process")}
+                <Link
+                  to="process"
+                  smooth={true}
+                  offset={-100}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Process
-                </button>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <button
-                  onClick={() => handleNavigation("portfolio")}
+                <Link
+                  to="portfolio"
+                  smooth={true}
+                  offset={-70}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Portfolio
-                </button>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <button
-                  onClick={() => handleNavigation("testimonials")}
+                <Link
+                  to="testimonials"
+                  smooth={true} 
+                  offset={-100}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Testimonials
-                </button>
+                </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -131,43 +147,51 @@ const Header = () => {
           <NavigationMenu>
             <NavigationMenuList className="flex flex-col items-center space-y-4 text-gray-700 font-bold text-sm p-4">
               <NavigationMenuItem>
-                <button
-                  onClick={() => handleNavigation("home")}
-                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
+                <Link
+                  to="home"
+                  smooth={true}
+                  offset={-100}
+                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100 cursor-pointer"
                 >
                   Home
-                </button>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <button
-                  onClick={() => handleNavigation("about")}
-                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
+                <Link
+                  to="about"
+                  smooth={true}
+                  offset={-100}
+                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100 cursor-pointer cursor-pointer"
                 >
                   About Us
-                </button>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <button
-                  onClick={() => handleNavigation("services")}
-                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
+                <Link
+                  to="services"
+                  smooth={true} 
+                  offset={-100}
+                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100 cursor-pointer"
                 >
                   Services
-                </button>
+                </Link>
               </NavigationMenuItem>
-              <NavigationMenuItem>
-                <button
-                  onClick={() => handleNavigation("portfolio")}
-                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100"
+              <NavigationMenuItem >
+                <Link
+                  to="portfolio"
+                  smooth={true} 
+                  offset={-100}
+                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100 cursor-pointer"
                 >
                   Portfolio
-                </button>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Button
                   onClick={() => handleNavigation("contactus")}
                   variant="outline"
                   rounded="rounded-full"
-                  className="px-3 py-1 w-full text-center text-sm"
+                  className="px-3 py-1 w-full text-center text-sm cursor-pointer"
                 >
                   Get in Touch →
                 </Button>
