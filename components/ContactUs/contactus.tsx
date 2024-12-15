@@ -18,16 +18,14 @@ export default function Page() {
       ...prevData,
       [name]: value,
     }));
-    
-    
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    const YOUR_SERVICE_ID = "service_kdii0yp";
-    const YOUR_TEMPLATE_ID = "template_9w6wk8s";
-    const YOUR_PUBLIC_KEY = "UZMlxsKiNlzasla6X";
+    const YOUR_SERVICE_ID = "service_heks16s";
+    const YOUR_TEMPLATE_ID = "template_trq93t4";
+    const YOUR_PUBLIC_KEY = "9ltGQOMzE78qnrrhZ";
 
     emailjs
       .send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, formData, {
