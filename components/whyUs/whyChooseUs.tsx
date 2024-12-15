@@ -5,6 +5,7 @@ import Image from "next/image";
 const WhyChooseUs = () => {
   return (
     <div
+    id="whyus"
       className="relative bg-cover bg-center min-h-screen"
       style={{ backgroundImage: "url('/images/HummflyBirdBg.png')" }}
     >

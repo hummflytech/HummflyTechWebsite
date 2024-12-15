@@ -55,13 +55,12 @@ const Header = () => {
           <NavigationMenu>
             <NavigationMenuList className="flex items-center space-x-6 text-gray-700 font-bold text-sm">
               <NavigationMenuItem>
-                <Link
-                  to="home"
-                  smooth={true}
+              <button
+                  onClick={() => handleNavigation("home")}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Home
-                </Link>
+                </button>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link
@@ -78,7 +77,7 @@ const Header = () => {
                 <Link
                   to="services"
                   smooth={true}
-                  offset={-30}
+                  offset={-70}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Services
@@ -98,7 +97,7 @@ const Header = () => {
                 <Link
                   to="portfolio"
                   smooth={true}
-                  offset={-70}
+                  offset={-100}
                   className="hover:text-secondary focus:outline-none"
                 >
                   Portfolio
@@ -161,7 +160,7 @@ const Header = () => {
                   to="about"
                   smooth={true}
                   offset={-100}
-                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100 cursor-pointer cursor-pointer"
+                  className="block w-full text-center px-4 py-2 rounded-lg hover:bg-gray-100 cursor-pointer"
                 >
                   About Us
                 </Link>

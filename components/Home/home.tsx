@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Home = () => {
@@ -18,9 +19,13 @@ const Home = () => {
             delivering innovative, high-quality, and scalable digital products
             tailored to your business needs.
           </p>
-          <button className="mt-6 px-6 py-3 bg-orange-500 text-white rounded-full shadow-lg hover:bg-orange-600 transition-all">
-            Start your Project →
-          </button>
+          <Link href="/form">
+        <button
+          className="mt-6 px-6 py-3 bg-orange-500 text-white rounded-full shadow-lg hover:bg-orange-600 transition-all"
+        >
+          Start your Project →
+        </button>
+      </Link>
         </div>
 
         <div className="relative w-full max-w-lg mt-6 md:mt-0 hidden md:block">
