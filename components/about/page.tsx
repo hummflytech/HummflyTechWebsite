@@ -1,10 +1,11 @@
 "use client";
-import CustomButton from "@/components/ui/button";
+import Button from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import aboutImg from "../../public/images/AboutUsSection.png";
 import aboutWoman from "../../public/images/aboutuswoman.png";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -31,16 +32,20 @@ const About = () => {
             complex challenges into efficient, scalable, and effective
             solutions.
           </p>
-          <CustomButton
-            as="a"
+          <Link
+            as="our_team"
             href="/our_team"
+          >
+            <Button
+        
             variant="primary"
             rounded="rounded-full"
-            className="mt-8 px-6 py-3 sm:px-8 sm:py-4 shadow-lg hover:bg-[#1A906B]/90"
-          >
+            className="mt-8 px-6 py-3 sm:px-8 sm:py-4 shadow-lg hover:bg-[#1A906B]/90">
+             
             Get to know The Team
             <ArrowRight size={20} />
-          </CustomButton>
+            </Button>
+          </Link>
         </div>
         <div className="flex-1 hidden lg:block">
           <Image

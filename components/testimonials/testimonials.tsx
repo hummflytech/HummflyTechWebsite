@@ -52,14 +52,14 @@ const TestimonialList = () => {
   return (
     <div
       id="testimonials"
-      className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden overflow-y-hidden mb-16"
+      className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden overflow-y-hidden mb-16 h-["
     >
       <h1 className="text-[32px] sm:text-[36px] font-bold mt-16 text-[#1A906B] text-center mb-10">
         Testimonials
       </h1>
       <Slider {...settings} ref={sliderRef}>
         {testimonials.map((testimonial, index) => (
-          <div className="px-4" key={testimonial.id}>
+          <div className="px-4 z-50" key={testimonial.id}>
             <TestimonialCard
               index={index}
               image={testimonial.image}
