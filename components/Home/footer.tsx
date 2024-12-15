@@ -6,15 +6,12 @@ import { FaLinkedin } from "react-icons/fa";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 
-
+// Define the expected response type
 interface Response {
   success: boolean;
 }
 
 const Subscribe: React.FC = () => {
-
-
-
   const [email, setEmail] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -41,7 +38,8 @@ const Subscribe: React.FC = () => {
         console.error('Error response:', response);
         throw new Error('Network response was not ok');
       }
-  
+
+      // Specify the response type here
       const result: Response = await response.json();
 
       if (result.success) {
@@ -50,8 +48,11 @@ const Subscribe: React.FC = () => {
       } else {
         alert('Something went wrong. Please try again.');
       }
-    } catch (error: any) {
-      console.error('Error submitting email:', error);
+    } catch (error: unknown) {
+      // Narrow down the type of error
+      if (error instanceof Error) {
+        console.error('Error submitting email:', error.message);
+      }
       setError('An error occurred. Please try again later.');
     } finally {
       setIsLoading(false);
@@ -79,7 +80,7 @@ const Subscribe: React.FC = () => {
   );
 };
 
-const Footer = () => {
+const Footer: React.FC = () => {
   const pathname = usePathname(); // Get the current route
 
   // Smoothly scroll to section if on the same page
@@ -89,7 +90,7 @@ const Footer = () => {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
-  
+
   // Handle navigation for both same-page and cross-route
   const handleNavigation = (id: string) => {
     if (pathname === "/") {
@@ -100,25 +101,24 @@ const Footer = () => {
       window.location.href = `/#${id}`;
     }
   };
+
   return (
     <div className="min-h-auto bg-teal-600 text-white flex flex-col items-center justify-center">
       <div className="bg-black p-8 rounded-br-[150px] rounded-bl-[150px]">
         <div className="mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="w-[400px] mr-[300px]">
             <h3 className="text-lg font-semibold mb-4">
-              Subscribe to receive the latest updates, new insights, and new
-              services.
+              Subscribe to receive the latest updates, new insights, and new services.
             </h3>
             <Subscribe /> {/* Embed the Subscribe component here */}
           </div>
 
           {/* Other Sections */}
-          {/* Quick Links Section, Contact Section, etc. */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick links</h3>
             <ul className="space-y-2">
               <li>
-              <button
+                <button
                   onClick={() => handleNavigation("home")}
                   className="hover:text-secondary focus:outline-none"
                 >
@@ -126,7 +126,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-              <button
+                <button
                   onClick={() => handleNavigation("about")}
                   className="hover:text-secondary focus:outline-none"
                 >
@@ -139,10 +139,10 @@ const Footer = () => {
                   className="hover:text-secondary focus:outline-none"
                 >
                   Why HummflyTech
-                  </button>
+                </button>
               </li>
               <li>
-              <button
+                <button
                   onClick={() => handleNavigation("services")}
                   className="hover:text-secondary focus:outline-none"
                 >
@@ -150,7 +150,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-              <button
+                <button
                   onClick={() => handleNavigation("portfolio")}
                   className="hover:text-secondary focus:outline-none"
                 >
@@ -158,7 +158,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-              <button
+                <button
                   onClick={() => handleNavigation("testimonials")}
                   className="hover:text-secondary focus:outline-none"
                 >
@@ -176,9 +176,6 @@ const Footer = () => {
           </div>
         </div>
 
-
-        
-
         {/* Divider and Bottom Bar */}
         <div className="border-t border-gray-700 py-4">
           <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
@@ -195,8 +192,8 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          </div>
         </div>
+      </div>
 
       {/* Social Icons */}
       <div className="py-7">
@@ -210,13 +207,13 @@ const Footer = () => {
           <a href="https://t.me/hummflytech" className="px-3 py-2 bg-white rounded-[6px]" target="_blank">
             <FaTelegram size={30} color="#0B8F70" />
           </a>
-          <a  href="https://www.linkedin.com/company/hummflytech/posts/?feedView=all"className="px-3 py-2 bg-white rounded-[6px] " target="_blank">
-
+          <a href="https://www.linkedin.com/company/hummflytech/posts/?feedView=all" className="px-3 py-2 bg-white rounded-[6px]" target="_blank">
             <FaLinkedin size={30} color="#0B8F70" />
           </a>
         </div>
       </div>
-    </div>);
+    </div>
+  );
 };
 
 export default Footer;
