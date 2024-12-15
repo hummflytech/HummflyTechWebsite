@@ -204,13 +204,13 @@ const Footer = () => {
           <a href="#" className="text-white text-[20px]">
             <i className="fab fa-instagram"></i> Social Medias
           </a>
-          <a href="https://www.instagram.com/hummflytech/" className="px-3 py-2 bg-white rounded-[6px]">
+          <a href="https://www.instagram.com/hummflytech/" className="px-3 py-2 bg-white rounded-[6px]" target="_blank">
             <LuInstagram size={30} color="#0B8F70" />
           </a>
-          <a href="https://t.me/hummflytech" className="px-3 py-2 bg-white rounded-[6px]">
+          <a href="https://t.me/hummflytech" className="px-3 py-2 bg-white rounded-[6px]" target="_blank">
             <FaTelegram size={30} color="#0B8F70" />
           </a>
-          <a  href="https://www.linkedin.com/company/hummflytech/posts/?feedView=all"className="px-3 py-2 bg-white rounded-[6px]">
+          <a  href="https://www.linkedin.com/company/hummflytech/posts/?feedView=all"className="px-3 py-2 bg-white rounded-[6px] " target="_blank">
 
             <FaLinkedin size={30} color="#0B8F70" />
           </a>
