@@ -9,7 +9,8 @@ export default function Services() {
           Our Services
         </h1>
         <p className="mt-4 text-[24px]  md:text-[30px]  font-semibold">
-          Comprehensive <span className="text-orange-500"> Digital Solutions </span> for Your{" "}
+          Comprehensive{" "}
+          <span className="text-orange-500"> Digital Solutions </span> for Your{" "}
           <br className="hidden md:block" />
           Business Needs
         </p>
@@ -34,8 +35,8 @@ export default function Services() {
         />
         <SimpleCard
           number="04"
-          title="UI/UX Design"
-          description="User-centered design solutions that enhance usability and engagement."
+          title="Graphic Design"
+          description="Creative visuals that communicate your brand and captivate audiences."
         />
         <SimpleCard
           number="05"

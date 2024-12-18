@@ -3,82 +3,82 @@ import { LuInstagram } from "react-icons/lu";
 import { FaTelegram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 
 // Define the expected response type
-interface Response {
-  success: boolean;
-}
+// interface Response {
+//   success: boolean;
+// }
 
-const Subscribe: React.FC = () => {
-  const [email, setEmail] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
+// const Subscribe: React.FC = () => {
+//   const [email, setEmail] = useState<string>('');
+//   const [isLoading, setIsLoading] = useState<boolean>(false);
+//   const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async () => {
-    if (!email) {
-      alert('Please enter a valid email address.');
-      return;
-    }
+//   const handleSubmit = async () => {
+//     if (!email) {
+//       alert('Please enter a valid email address.');
+//       return;
+//     }
 
-    setIsLoading(true);
-    setError(null);
+//     setIsLoading(true);
+//     setError(null);
 
-    try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxgnGZgplF3DUjx1etwnEQy7Sns4zOUq5INYUYFTM8E37aUMfA7V9si75vhawZ6GNhNqw/exec', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
+//     try {
+//       const response = await fetch('https://script.google.com/macros/s/AKfycbxgnGZgplF3DUjx1etwnEQy7Sns4zOUq5INYUYFTM8E37aUMfA7V9si75vhawZ6GNhNqw/exec', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ email }),
+//       });
 
-      if (!response.ok) {
-        console.error('Error response:', response);
-        throw new Error('Network response was not ok');
-      }
+//       if (!response.ok) {
+//         console.error('Error response:', response);
+//         throw new Error('Network response was not ok');
+//       }
 
-      // Specify the response type here
-      const result: Response = await response.json();
+//       // Specify the response type here
+//       const result: Response = await response.json();
 
-      if (result.success) {
-        alert('Thank you for subscribing!');
-        setEmail('');
-      } else {
-        alert('Something went wrong. Please try again.');
-      }
-    } catch (error: unknown) {
-      // Narrow down the type of error
-      if (error instanceof Error) {
-        console.error('Error submitting email:', error.message);
-      }
-      setError('An error occurred. Please try again later.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
+//       if (result.success) {
+//         alert('Thank you for subscribing!');
+//         setEmail('');
+//       } else {
+//         alert('Something went wrong. Please try again.');
+//       }
+//     } catch (error: unknown) {
+//       // Narrow down the type of error
+//       if (error instanceof Error) {
+//         console.error('Error submitting email:', error.message);
+//       }
+//       setError('An error occurred. Please try again later.');
+//     } finally {
+//       setIsLoading(false);
+//     }
+//   };
 
-  return (
-    <div className="flex">
-      <input
-        type="email"
-        placeholder="Email address"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="flex-grow px-4 py-2 rounded-l-[10px] border border-gray-400 focus:outline-none text-stone-950"
-      />
-      <button
-        onClick={handleSubmit}
-        className="bg-teal-600 text-white px-4 py-2 rounded-r-[10px] hover:bg-teal-600"
-        disabled={isLoading}
-      >
-        {isLoading ? 'Subscribing...' : 'Subscribe'}
-      </button>
-      {error && <p className="text-red-500">{error}</p>}
-    </div>
-  );
-};
+//   return (
+//     <div className="flex">
+//       <input
+//         type="email"
+//         placeholder="Email address"
+//         value={email}
+//         onChange={(e) => setEmail(e.target.value)}
+//         className="flex-grow px-4 py-2 rounded-l-[10px] border border-gray-400 focus:outline-none text-stone-950"
+//       />
+//       <button
+//         onClick={handleSubmit}
+//         className="bg-teal-600 text-white px-4 py-2 rounded-r-[10px] hover:bg-teal-600"
+//         disabled={isLoading}
+//       >
+//         {isLoading ? 'Subscribing...' : 'Subscribe'}
+//       </button>
+//       {error && <p className="text-red-500">{error}</p>}
+//     </div>
+//   );
+// };
 
 const Footer: React.FC = () => {
   const pathname = usePathname(); // Get the current route

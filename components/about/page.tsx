@@ -20,30 +20,20 @@ const About = () => {
             About Us
           </h1>
           <h2 className="text-[24px]  md:text-[30px]  font-semibold mt-4">
-            <span className="text-[#FF4500]">Hummfly Tech</span> Providing The
-            Best Software Solution To The Companies Around The Globe.
+            <span className="text-[#FF4500]">Hummfly Tech</span> Providing the
+            best digital solutions to companies around the globe.
           </h2>
           <p className="mt-6 text-lg sm:text-xl leading-relaxed text-gray-600">
-            Forward-thinking software development agency dedicated to helping
-            businesses thrive in the digital world. With a focus on technology
-            innovation, user-centric design, and robust development practices,
-            we bring unique digital experiences to life. Our team of seasoned
-            developers, designers, and strategists work closely with you to turn
-            complex challenges into efficient, scalable, and effective
-            solutions.
+          We are a dynamic digital enterprise dedicated to driving business success in the digital age. With a focus on innovation, user-centric design, and cutting-edge technology, we deliver tailored solutions that transform challenges into opportunities. Our team of experts collaborates closely with you to create scalable, efficient, and impactful results that propel your business forward.
           </p>
-          <Link
-            as="our_team"
-            href="/our_team"
-          >
+          <Link as="our_team" href="/our_team">
             <Button
-        
-            variant="primary"
-            rounded="rounded-full"
-            className="mt-8 px-6 py-3 sm:px-8 sm:py-4 shadow-lg hover:bg-[#1A906B]/90 text-base sm:text-lg md:text-xl">
-             
-            Get to know The Team
-            <ArrowRight size={20} />
+              variant="primary"
+              rounded="rounded-full"
+              className="mt-8 px-6 py-3 sm:px-8 sm:py-4 shadow-lg hover:bg-[#1A906B]/90 text-base sm:text-lg md:text-xl"
+            >
+              Get to know The Team
+              <ArrowRight size={20} />
             </Button>
           </Link>
         </div>
@@ -79,8 +69,7 @@ const About = () => {
               Our Mission
             </h1>
             <p className="text-lg sm:text-xl leading-relaxed text-gray-600">
-              To empower businesses by creating tailored digital solutions that
-              drive growth, efficiency, and innovation.
+              To deliver innovative digital solutions that empower communities, drive progress, and create lasting impact across Ethiopia, East Africa, and beyond.
             </p>
           </div>
           <div>
@@ -88,8 +77,7 @@ const About = () => {
               Our Vision
             </h1>
             <p className="text-lg sm:text-xl leading-relaxed text-gray-600">
-              To empower businesses by creating tailored digital solutions that
-              drive growth, efficiency, and innovation.
+            To establish Ethiopia as a global hub for innovation, where cutting-edge technology and exceptional talent drive progress, recognition, and lasting impact on the world stage.
             </p>
           </div>
         </div>

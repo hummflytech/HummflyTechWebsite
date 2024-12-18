@@ -97,7 +97,7 @@ const Portfolio: React.FC = () => {
       className="mx-auto  mb-20 px-4 md:px-6 lg:px-10 max-w-[1400px] overflow-hidden pt-24 lg:pt-36 text-center"
     >
       <h1 className="text-[36px] md:text-[44px]  text-[#1A906B] font-bold">
-        Our Portfolio
+      Our Team Members Portfolio
       </h1>
 
       <p className="text-lg sm:text-xl text-gray-600 p-2 sm:p-10 md:px-20 lg:px-40">
