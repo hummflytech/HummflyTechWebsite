@@ -10,7 +10,7 @@ import About from "../components/about/page";
 
 export default function Page() {
   return (
-    <div>
+    <div className="min-h-screen ">
       <Home />
       <About />
       <Services />

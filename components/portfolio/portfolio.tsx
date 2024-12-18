@@ -94,19 +94,19 @@ const Portfolio: React.FC = () => {
   return (
     <div
       id="portfolio"
-      className="mx-auto mt-16 mb-20 px-4 md:px-6 lg:px-10 max-w-[1400px] overflow-hidden"
+      className="mx-auto  mb-20 px-4 md:px-6 lg:px-10 max-w-[1400px] overflow-hidden pt-24 lg:pt-36 text-center"
     >
-      <h1 className="text-[40px] font-bold text-[#1A906B] text-center">
+      <h1 className="text-[36px] md:text-[44px]  text-[#1A906B] font-bold">
         Our Portfolio
       </h1>
 
-      <p className="text-[20px] text-left mt-6 mb-10 max-w-[1200px] mx-auto">
+      <p className="text-lg sm:text-xl text-gray-600 p-2 sm:p-10 md:px-20 lg:px-40">
         Explore some of our recent projects to see how we’ve helped businesses
         across various industries achieve their digital goals.
       </p>
 
       <div ref={webDevRef} className="mt-20 mb-10 w-full">
-        <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10">
+        <h1 className="text-[24px] sm:text-[30] md:text-[36px] text-[#FF4500] font-semibold">
           Website Development
         </h1>
         <div className="w-full max-w-[1400px] mx-auto">
@@ -137,7 +137,7 @@ const Portfolio: React.FC = () => {
       {expanded && (
         <div className="mt-10">
           <div className="mt-20 mb-10 w-full">
-            <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10">
+            <h1 className="text-[24px] sm:text-[30] md:text-[36px] text-[#FF4500] font-semibold">
               Mobile Application Development
             </h1>
             <div className="w-full max-w-[1400px] mx-auto">
@@ -155,7 +155,7 @@ const Portfolio: React.FC = () => {
           </div>
 
           <div className="mt-20 mb-10 w-full">
-            <h1 className="text-[36px] font-bold text-[#1A906B] text-center mb-10">
+            <h1 className="text-[24px] sm:text-[30] md:text-[36px] text-[#FF4500] font-semibold">
               UI/UX Design
             </h1>
             <div className="w-full max-w-[1400px] mx-auto">

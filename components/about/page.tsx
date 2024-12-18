@@ -11,19 +11,19 @@ const About = () => {
   return (
     <div
       id="about"
-      className="flex flex-col gap-16 md:gap-28 md:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-16 mb-14 mt-10"
+      className="flex flex-col gap-16 md:gap-28 md:max-w-[1440px] mx-auto px-4 mb-14 pt-24 lg:pt-28"
     >
       {/* About Section */}
-      <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 text-center lg:text-left">
+      <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 text-center lg:text-center">
         <div className="flex-1">
-          <h1 className="text-[30px] sm:text-[32px] lg:text-[36px] text-[#1A906B] font-bold">
+          <h1 className="text-[36px] md:text-[44px]  text-[#1A906B] font-bold">
             About Us
           </h1>
-          <h2 className="text-[22px] sm:text-[28px] lg:text-[32px] font-semibold mt-4">
+          <h2 className="text-[24px]  md:text-[30px]  font-semibold mt-4">
             <span className="text-[#FF4500]">Hummfly Tech</span> Providing The
             Best Software Solution To The Companies Around The Globe.
           </h2>
-          <p className="mt-6 text-[16px] sm:text-[16px] leading-relaxed text-gray-600">
+          <p className="mt-6 text-lg sm:text-xl leading-relaxed text-gray-600">
             Forward-thinking software development agency dedicated to helping
             businesses thrive in the digital world. With a focus on technology
             innovation, user-centric design, and robust development practices,
@@ -40,7 +40,7 @@ const About = () => {
         
             variant="primary"
             rounded="rounded-full"
-            className="mt-8 px-6 py-3 sm:px-8 sm:py-4 shadow-lg hover:bg-[#1A906B]/90">
+            className="mt-8 px-6 py-3 sm:px-8 sm:py-4 shadow-lg hover:bg-[#1A906B]/90 text-base sm:text-lg md:text-xl">
              
             Get to know The Team
             <ArrowRight size={20} />
@@ -75,19 +75,19 @@ const About = () => {
         </div>
         <div className="flex-1 flex flex-col gap-8 sm:gap-10">
           <div>
-            <h1 className="text-[24px] sm:text-[30px] text-[#FF4500] font-semibold mb-4">
+            <h1 className="text-[24px] sm:text-[30] md:text-[36px] text-[#FF4500] font-semibold mb-4">
               Our Mission
             </h1>
-            <p className="text-[16px] sm:text-[18px] leading-relaxed text-gray-600">
+            <p className="text-lg sm:text-xl leading-relaxed text-gray-600">
               To empower businesses by creating tailored digital solutions that
               drive growth, efficiency, and innovation.
             </p>
           </div>
           <div>
-            <h1 className="text-[24px] sm:text-[30px] text-[#FF4500] font-semibold mb-4">
+            <h1 className="text-[24px] sm:text-[30] md:text-[36px] text-[#FF4500] font-semibold mb-4">
               Our Vision
             </h1>
-            <p className="text-[16px] sm:text-[18px] leading-relaxed text-gray-600">
+            <p className="text-lg sm:text-xl leading-relaxed text-gray-600">
               To empower businesses by creating tailored digital solutions that
               drive growth, efficiency, and innovation.
             </p>

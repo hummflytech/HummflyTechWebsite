@@ -51,7 +51,7 @@ export default function Page() {
   };
 
   return (
-    <div id="contactus" className="px-4 mb-14 pt-24 lg:pt-28 bg-gray-50">
+    <div id="contactus" className="pt-20 lg:pt-36 bg-gray-50">
       <div className="min-h-screen flex flex-col lg:flex-row bg-white shadow-lg shadow-[#919b99]  lg:mx-20 mb-10 rounded-2xl pt-6 px-2 lg:px-12">         
         <div className="flex-1 p-4 lg:p-10">
           <h1 className="text-left text-[32px] lg:text-[45px] font-bold text-[#00B188] pb-6">
@@ -66,7 +66,7 @@ export default function Page() {
                 Name:
               </label>
               <input
-                className="focus:outline-[#00B188] border-[#00B188] focus:shadow-outline border pl-4 rounded-xl w-full sm:max-w-[80%] lg:max-w-full  h-12"
+                className="focus:outline-[#00B188] border-[#00B188] focus:shadow-outline border pl-4 border-gray-300 rounded-xl w-full h-12"
                 type="text"
                 id="Name"
                 name="name"
@@ -81,7 +81,7 @@ export default function Page() {
                 Email:
               </label>
               <input
-                className="focus:outline-[#00B188] border-[#00B188] focus:shadow-outline border pl-4 rounded-xl w-full sm:max-w-[80%] lg:max-w-full  h-12"
+                className="focus:outline-[#00B188] border-[#00B188] focus:shadow-outline border pl-4 border-gray-300 rounded-xl w-full h-12"
                 type="email"
                 id="Email"
                 name="email"
@@ -98,7 +98,7 @@ export default function Page() {
               </label>
               <textarea
                 id="Message"
-                className="w-full sm:max-w-[80%] lg:max-w-full  p-4 border focus:outline-[#00B188] border-[#00B188] rounded-xl resize-y"
+                className="w-full p-4 border focus:outline-[#00B188] border-[#00B188] rounded-xl resize-y"
                 rows={4}
                 name="message"
                 placeholder="Enter your message here..."
@@ -108,7 +108,7 @@ export default function Page() {
             </div>
 
             <button
-              className="font-poppins py-3 w-full sm:max-w-[80%] lg:max-w-full  bg-[#22B286] text-white rounded-xl hover:bg-[#1b945b] transition-colors shadow-lg"
+              className="font-poppins py-3 w-full bg-[#22B286] text-white rounded-xl hover:bg-[#1b945b] transition-colors shadow-lg"
               type="submit"
             >
               Submit
@@ -116,13 +116,13 @@ export default function Page() {
           </form>
         </div>
 
-        <div className="relative max-w-full mt-8 lg:mt-0 lg:ml-20 flex-1 p-4 lg:p-10">
+        <div className="relative max-w-lg mt-8 lg:mt-0 lg:ml-20 flex-1 p-4 lg:p-10">
           <Image
             src="/images/contactUs.png"
             alt="Contact Us Illustration"
             width={400}
             height={400}
-            className="mx-auto w-full lg:mx-0 rounded-xl"
+            className="mx-auto lg:mx-0 rounded-xl"
           />
           <div className="mt-8 space-y-6">
             {/* Address Section */}

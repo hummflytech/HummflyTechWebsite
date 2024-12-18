@@ -103,15 +103,15 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <div className="min-h-auto bg-teal-600 text-white flex flex-col items-center justify-center">
-      <div className="bg-black p-8 rounded-br-[150px] rounded-bl-[150px]">
+    <div className="min-h-auto bg-teal-600 text-white flex flex-col items-center text-center justify-evenly">
+      <div className="bg-black p-8 rounded-br-[10%] md:rounded-br-[15%] lg:rounded-br-[20%] rounded-bl-[10%] w-full">
         <div className="mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="w-[400px] mr-[300px]">
+          {/* <div className="w-[400px] mr-[300px]">
             <h3 className="text-lg font-semibold mb-4">
               Subscribe to receive the latest updates, new insights, and new services.
             </h3>
-            <Subscribe /> {/* Embed the Subscribe component here */}
-          </div>
+            <Subscribe /> 
+          </div> */}
 
           {/* Other Sections */}
           <div>
@@ -174,33 +174,9 @@ const Footer: React.FC = () => {
             <p>Phone: +123-456-7890</p>
             <p>E-mail: contact@hummflytech.com</p>
           </div>
-        </div>
-
-        {/* Divider and Bottom Bar */}
-        <div className="border-t border-gray-700 py-4">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <p className="text-sm">
-              Copyright © 2024 Hummfly Tech. All Rights Reserved.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-teal-600">
-                Terms of Service
-              </a>
-              <span>|</span>
-              <a href="#" className="hover:text-teal-600">
-                Privacy Policy
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Social Icons */}
-      <div className="py-7">
-        <div className="max-w-7xl mx-auto px-4 flex justify-center items-center space-x-6">
-          <a href="#" className="text-white text-[20px]">
-            <i className="fab fa-instagram"></i> Social Medias
-          </a>
+          <div className="">
+          <h3 className="text-lg font-semibold mb-4 text-center">Social Medias</h3>
+          <div className="flex flex-row justify-evenly">
           <a href="https://www.instagram.com/hummflytech/" className="px-3 py-2 bg-white rounded-[6px]" target="_blank">
             <LuInstagram size={30} color="#0B8F70" />
           </a>
@@ -209,8 +185,32 @@ const Footer: React.FC = () => {
           </a>
           <a href="https://www.linkedin.com/company/hummflytech/posts/?feedView=all" className="px-3 py-2 bg-white rounded-[6px]" target="_blank">
             <FaLinkedin size={30} color="#0B8F70" />
-          </a>
+          </a></div>
         </div>
+        </div>
+
+        {/* Divider and Bottom Bar */}
+        <div className="border-t border-gray-700 py-4">
+          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+            <p className="text-sm">
+              Copyright © 2024 Hummfly Tech.  All Rights Reserved.
+            </p>
+            <div className="flex space-x-4">
+            <p className="text-sm">
+                Terms of Service
+              </p>
+              <span>|</span>
+              <p className="text-sm">
+                Privacy Policy
+             </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Social Icons */}
+      <div className="py-5">
+        
       </div>
     </div>
   );

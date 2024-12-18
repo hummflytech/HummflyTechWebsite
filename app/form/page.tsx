@@ -3,7 +3,7 @@ import React from "react";
 
 const FormPage = () => {
   return (
-    <div>
+    <div className="pt-20 overflow-y-hidden h-screen">
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSd4PNI0eV5qZK71GDpqSyQPOKa6oIsQfj7VnHH-XP7JvMqBQw/viewform?embedded=true"
         width="100%"
