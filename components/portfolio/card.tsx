@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image, { type StaticImageData } from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface PortFolioProps {
@@ -60,18 +61,20 @@ export const PortFolio = ({
           {description}
         </CardDescription>
       </CardContent>
-      <CardFooter>
-        <button
-          type="button"
-          className="absolute bottom-2 right-4 px-4 py-1 rounded-[30px] text-[15px] transition-colors duration-200 ease-in-out hover:bg-opacity-80"
-          style={{
-            backgroundColor: buttonBackgroundColor,
-            color: buttonTextColor,
-          }}
-        >
-          {buttonText}
-        </button>
-      </CardFooter>
+      {/* <CardFooter> */}
+      <Link as="explore_more" href="/explore_more">
+  <button
+    type="button"
+    className="absolute bottom-2 right-4 px-4 py-1 rounded-[30px] text-[15px] transition-colors duration-200 ease-in-out hover:bg-opacity-80 cursor-pointer"
+    style={{
+      backgroundColor: buttonBackgroundColor,
+      color: buttonTextColor,
+    }}
+  >
+    {buttonText}
+  </button>
+</Link>
+      {/* </CardFooter> */}
     </Card>
   );
 };
