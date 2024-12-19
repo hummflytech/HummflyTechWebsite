@@ -52,9 +52,9 @@ const TestimonialList = () => {
   return (
     <div
       id="testimonials"
-      className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden mb-16 h-[700px]"
+      className="max-w-[1440px] mx-auto  sm:px-6 lg:px-8 overflow-x-hidden  h-[700px] pt-24 lg:pt-36 text-center px-4"
     >
-      <h1 className="text-[32px] sm:text-[36px] font-bold mt-16 text-[#1A906B] text-center mb-10">
+      <h1 className="text-[36px] md:text-[44px]  text-[#1A906B] font-bold pb-5">
         Testimonials
       </h1>
       <Slider {...settings} ref={sliderRef}>

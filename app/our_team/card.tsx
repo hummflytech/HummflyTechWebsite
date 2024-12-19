@@ -16,13 +16,13 @@ interface TeamCardProps {
 }
 const TeamCard = ({ name, role, description, image, socialLinks }: TeamCardProps) => {
   return (
-    <div className="w-[280px] h-[320px] flex flex-col items-center gap-2 border-2 border-white relative overflow-hidden group rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+    <div className="w-[280px] h-[350px] flex flex-col items-center gap-2 border-2 border-white relative overflow-hidden group rounded-[20px] shadow-xl hover:shadow-2xl transition-shadow duration-300 ">
       <Image
         src={image}
         alt={name}
-        className="w-[220px] mt-4 transition-transform duration-500 group-hover:scale-110"
-        width={300} // Replace with your actual image width
-        height={200} // Replace with your actual image height
+        width={500} // Replace with your actual image width
+        height={400} // Replace with your actual image height
+        className="w-[200px] h-[200px] rounded-full mt-4 transition-transform duration-500 group-hover:scale-110"
       />
       <p className="text-[18px] font-semibold">{name}</p>
       <p className="text-[13px] mt-[-8px] mb-4">{role}</p>
