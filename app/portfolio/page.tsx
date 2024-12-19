@@ -1,7 +1,7 @@
-import React from "react";
+import type { GetStaticPaths, GetStaticProps } from "next";
 import Image from "next/image";
-import { GetStaticProps, GetStaticPaths } from "next";
-import {portfolioData} from "./[id]/data";
+import type React from "react";
+import { portfolioData } from "./[id]/data";
 
 interface PortfolioDetailProps {
   portfolio: {
@@ -30,15 +30,9 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ portfolio }) => {
 
       {/* Right Section: Description */}
       <div className="flex-1">
-        <h1 className="text-[36px] md:text-[44px] text-[#1A906B] font-bold">
-          {portfolio.title}
-        </h1>
-        <p className="mt-6 leading-relaxed text-gray-600 text-[15px]">
-          {portfolio.description}
-        </p>
-        <p className="mt-4 leading-relaxed text-gray-600 text-[15px]">
-          {portfolio.details}
-        </p>
+        <h1 className="text-[36px] md:text-[44px] text-[#1A906B] font-bold">{portfolio.title}</h1>
+        <p className="mt-6 leading-relaxed text-gray-600 text-[15px]">{portfolio.description}</p>
+        <p className="mt-4 leading-relaxed text-gray-600 text-[15px]">{portfolio.details}</p>
       </div>
     </div>
   );
