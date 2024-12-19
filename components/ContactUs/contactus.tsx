@@ -148,12 +148,12 @@ export default function Page() {
                 width={30}
                 height={30}
               />
-              <h3 className="text-gray-700">+251 938 594 992</h3>
+              <h3 className="text-gray-700">+251938594992</h3>
             </a>
 
             {/* Email Section */}
             <a
-              href="mailto:contact@hummflytech.com"
+              href="mailto:contactus@hummflytech.com"
               className="flex items-center space-x-4 hover:bg-gray-100 p-2 rounded-xl transition"
             >
               <Image
@@ -162,7 +162,7 @@ export default function Page() {
                 width={30}
                 height={30}
               />
-              <h3 className="text-gray-700">contact@hummflytech.com</h3>
+              <h3 className="text-gray-700">contactus@hummflytech.com</h3>
             </a>
 
             {/* Social Media Section */}

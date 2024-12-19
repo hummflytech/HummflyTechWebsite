@@ -114,7 +114,29 @@ const Footer: React.FC = () => {
           </div> */}
 
           {/* Other Sections */}
+          
+
+          {/* Contact Section */}
+          <div className="">
+          <h3 className="text-lg font-semibold mb-4 text-center">Social Medias</h3>
+          <div className="flex flex-row justify-evenly">
+          <a href="https://www.instagram.com/hummflytech/" className="px-3 py-2 bg-white rounded-[6px]" target="_blank">
+            <LuInstagram size={30} color="#0B8F70" />
+          </a>
+          <a href="https://t.me/hummflytech" className="px-3 py-2 bg-white rounded-[6px]" target="_blank">
+            <FaTelegram size={30} color="#0B8F70" />
+          </a>
+          <a href="https://www.linkedin.com/company/hummflytech/posts/?feedView=all" className="px-3 py-2 bg-white rounded-[6px]" target="_blank">
+            <FaLinkedin size={30} color="#0B8F70" />
+          </a></div>
+        </div>
           <div>
+            <h3 className="text-lg font-semibold mb-4 ">Contact Us</h3>
+            <p >Phone: +251938594992</p>
+            <p >E-mail: contactus@hummflytech.com</p>
+          </div>
+          
+        <div>
             <h3 className="text-lg font-semibold mb-4">Quick links</h3>
             <ul className="space-y-2">
               <li>
@@ -167,26 +189,6 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-
-          {/* Contact Section */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <p>Phone: +123-456-7890</p>
-            <p>E-mail: contact@hummflytech.com</p>
-          </div>
-          <div className="">
-          <h3 className="text-lg font-semibold mb-4 text-center">Social Medias</h3>
-          <div className="flex flex-row justify-evenly">
-          <a href="https://www.instagram.com/hummflytech/" className="px-3 py-2 bg-white rounded-[6px]" target="_blank">
-            <LuInstagram size={30} color="#0B8F70" />
-          </a>
-          <a href="https://t.me/hummflytech" className="px-3 py-2 bg-white rounded-[6px]" target="_blank">
-            <FaTelegram size={30} color="#0B8F70" />
-          </a>
-          <a href="https://www.linkedin.com/company/hummflytech/posts/?feedView=all" className="px-3 py-2 bg-white rounded-[6px]" target="_blank">
-            <FaLinkedin size={30} color="#0B8F70" />
-          </a></div>
-        </div>
         </div>
 
         {/* Divider and Bottom Bar */}

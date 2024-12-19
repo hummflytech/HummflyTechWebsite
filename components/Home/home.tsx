@@ -57,7 +57,7 @@ const Home = () => {
       <div className="  md:mx-0 lg:mx-32 flex flex-col  lg:flex-row  items-center justify-between gap-12 md:gap-4 ">
         <div className="text-center max-w-lg w-full mx-auto sm:text-center">
           <div>
-            <p className="text-[32px] lg:text-[45px] font-bold text-[#00B188] pb-5">
+            <p className="text-[32px] lg:text-[45px] font-bold text-[#00B188] pt-10 md:pt-0 pb-5">
               {" "}
               Well Come to <span className="text-orange-500 ">
                 {" "}

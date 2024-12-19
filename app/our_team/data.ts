@@ -27,7 +27,7 @@ export const teamData = [
       facebook: "#",
     },
   },
-  
+
   {
     id: 4,
     name: "Ebba Birhanu",
@@ -132,10 +132,7 @@ export const teamData = [
       facebook: "#",
     },
   },
-  
-  
-  
-  
+
   {
     id: 12,
     name: "Daniel Ababu ",
