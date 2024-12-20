@@ -17,7 +17,7 @@ export default function Page() {
       <WhyChooseUs />
       <Process />
       <Portfolio />
-      <TestimonialList />
+      {/* <TestimonialList /> */}
       <ContactUS />
       <Footer />
     </div>

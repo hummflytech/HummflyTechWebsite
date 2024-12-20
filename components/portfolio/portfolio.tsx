@@ -58,7 +58,7 @@ const Portfolio: React.FC = () => {
     nextArrow: <SlickArrowRight />,
     appendDots: (dots) => (
       <div className="relative">
-        <ul className="flex justify-center mt-8 space-x-2">{dots}</ul>
+        <ul className="flex align-middle justify-center mt-8 space-x-2">{dots}</ul>
       </div>
     ),
     responsive: [
@@ -105,15 +105,16 @@ const Portfolio: React.FC = () => {
         across various industries achieve their digital goals.
       </p>
 
-      <div ref={webDevRef} className="mt-20 mb-10 w-full">
-        <h1 className="text-[24px] sm:text-[30] md:text-[36px] text-[#FF4500] font-semibold">
+      <div ref={webDevRef} className="mt-20 mb-10 w-full justify-center">
+        {/* <h1 className="text-[24px] sm:text-[30] md:text-[36px] text-[#FF4500] font-semibold">
           Website Development
-        </h1>
-        <div className="w-full max-w-[1400px] mx-auto">
+        </h1> */}
+        <div className="w-full max-w-[1400px] mx-auto px-auto justify-center items-center">
           <Slider {...settings}>
             {mockData.map((item) => (
               <PortFolio
                 key={item.id}
+                id= {item.id}
                 image={item.image}
                 title={item.title}
                 description={item.description}
