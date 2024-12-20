@@ -4,7 +4,7 @@ import Home from "@/components/Home/home";
 import Services from "@/components/Service/services";
 import Portfolio from "@/components/portfolio/portfolio";
 import Process from "@/components/process/process";
-import TestimonialList from "@/components/testimonials/testimonials";
+// import TestimonialList from "@/components/testimonials/testimonials";
 import WhyChooseUs from "@/components/whyUs/whyChooseUs";
 import About from "../components/about/page";
 

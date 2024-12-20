@@ -1,4 +1,3 @@
-import cmMockup from "../../public/images/calanderManagement/CMMockup.jpg";
 import cm1 from "../../public/images/calanderManagement/cm1.jpg";
 import cm2 from "../../public/images/calanderManagement/cm2.jpg";
 import cm3 from "../../public/images/calanderManagement/cm3.jpg";

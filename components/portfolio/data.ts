@@ -1,5 +1,3 @@
-import img1 from "../../public/images/1.png";
-import img2 from "../../public/images/11 1.png";
 import cmMockup from "../../public/images/calanderManagement/CMMockup.jpg";
 import akoMockup from '../../public/images/akole/akolemockup.png';
 import pddMockup from '../../public/images/plantDeaseaseDetection/pddMockup.jpg';
@@ -45,6 +43,6 @@ export const mockData = [
     description:
       `MedFind is a web app that helps users find nearby pharmacies with
        specific medicines, track availability, and view locations on Google Maps.
-`,
-  }
+`,}
+  
 ];
