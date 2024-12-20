@@ -43,7 +43,7 @@ export const PortFolio = ({
     >
       <CardHeader className="h-[250px] p-0">
       <Image
-        src={typeof image === "string" ? image : ''}
+        src={typeof image === "string" ? image : image.src}
         alt={title || ''}
         width={300} // Match CSS width
         height={300} // Match CSS height
