@@ -1,77 +1,48 @@
-import img1 from "../../public/images/1.png";
-import img2 from "../../public/images/11 1.png";
-
+import cmMockup from "../../public/images/calanderManagement/CMMockup.jpg";
+import akoMockup from '../../public/images/akole/akolemockup.png';
+import pddMockup from '../../public/images/plantDeaseaseDetection/pddMockup.jpg';
+import crmMockup from '../../public/images/crm/crmMockup.png';
+import mdMockup from '../../public/images/medfind/mdMockup.png';
 export const mockData = [
   {
     id: 1,
-    image: img1,
-    title: "E-Commerce Platform",
+    image: akoMockup,
+    title: "Akolle Delivery",
     description:
-      "Revitalized a leading e-commerce platform to enhance user experience and increase conversion rate.",
+      "Akolle Delivery ensures the fresh, timely, and careful transport of food, dairy, and honey. With real-time tracking and optimized logistics, the demo app offers a seamless, reliable delivery experience.",
   },
   {
     id: 2,
-    image: img2,
-    title: "Health Blog Platform",
+    image: crmMockup,
+    title: "Real Estate CRM SaaS Development",
     description:
-      "A user-friendly blog platform for a health and wellness influencer with categories for articles, recipes, and tips.",
+      `At Addis Finder PLC, we built a robust Real Estate CRM SaaS platform using React and
+       TypeScript, optimizing state management, API integration, and routing to enhance real
+        estate workflows.`,
   },
   {
     id: 3,
-    image: img1,
-    title: "Portfolio Website",
+    image: pddMockup,
+    title: "AI-Driven Plant Disease Detection",
     description:
-      "Developed a personal portfolio website showcasing projects, skills, and contact details to attract clients.",
+      `Convolutional Neural Network (CNN) based solution for accurate plant disease classification, 
+      integrated into a Flask web app for easy and efficient plant health diagnostics.`,
   },
+  
   {
     id: 4,
-    image: img1,
-    title: "Portfolio Website",
+    image: cmMockup,
+    title: "Ethiopian Calendar Management System",
     description:
-      "Developed a personal portfolio website showcasing projects, skills, and contact details to attract clients.",
+      "A platform featuring the Ethiopian calendar, Gregorian conversion, daily prayers, and multilingual support, connecting culture and tradition.",
   },
   {
     id: 5,
-    image: img2,
-    title: "Portfolio Website",
+    image: mdMockup,
+    title: "MedFind: Medicine Availability",
     description:
-      "Developed a personal portfolio website showcasing projects, skills, and contact details to attract clients.",
-  },
-  // {
-
-  //   image: img1,
-  //   title: "Portfolio Website",
-  //   description: "Developed a personal portfolio website showcasing projects, skills, and contact details to attract clients.",
-  // },
-  // {
-  //   image: img1,
-  //   title: "E-Commerce Platform",
-  //   description: "Revitalized a leading e-commerce platform to enhance user experience and increase conversion rate.",
-  // },
-  // {
-  //   image: img2,
-  //   title: "Health Blog Platform",
-  //   description: "A user-friendly blog platform for a health and wellness influencer with categories for articles, recipes, and tips.",
-
-  // },
-  // {
-  //   image: img1,
-  //   title: "Portfolio Website",
-  //   description: "Developed a personal portfolio website showcasing projects, skills, and contact details to attract clients.",
-  // },
-  // {
-  //   image: img1,
-  //   title: "Portfolio Website",
-  //   description: "Developed a personal portfolio website showcasing projects, skills, and contact details to attract clients.",
-  // },
-  // {
-  //   image: img2,
-  //   title: "Portfolio Website",
-  //   description: "Developed a personal portfolio website showcasing projects, skills, and contact details to attract clients.",
-  // },
-  // {
-  //   image: img1,
-  //   title: "Portfolio Website",
-  //   description: "Developed a personal portfolio website showcasing projects, skills, and contact details to attract clients.",
-  // },
+      `MedFind is a web app that helps users find nearby pharmacies with
+       specific medicines, track availability, and view locations on Google Maps.
+`,}
+  
 ];
