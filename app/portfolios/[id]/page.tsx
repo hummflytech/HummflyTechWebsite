@@ -32,8 +32,8 @@ const PortfolioDetail = () => {
       {portfolioData[dataIndex].type === "mobile" ? (
         <div className="flex max-w-full justify-center shadow-sm bg-[#f6f8f9fb] py-5 flex-1 overflow-y-auto overflow-hidden lg:max-h-[600px] rounded-lg px-5 md:px-10 ">
           <div>
-            {portfolioData[dataIndex].data.map((item,index) => (
-              <div key ={index} className="mb-8">
+            {portfolioData[dataIndex].data.map((item) => (
+              <div key={0} className="mb-8">
                 <Image
                   src={item}
                   alt={`Portfolio image: ${portfolioData[dataIndex].title}`}
@@ -50,8 +50,8 @@ const PortfolioDetail = () => {
       ) : (
         <div className="flex max-w-full justify-center shadow-sm bg-[#f6f8f9fb] py-5 flex-1 overflow-y-auto overflow-hidden lg:max-h-[600px] rounded-lg px-5 md:px-10 ">
           <div>
-            {portfolioData[dataIndex].data.map((item, index) => (
-              <div key={index} className="mb-8">
+            {portfolioData[dataIndex].data.map((item) => (
+              <div key={0} className="mb-8">
                 <Image
                   src={item}
                   alt={`Portfolio image: ${portfolioData[dataIndex].title}`}
