@@ -13,8 +13,8 @@ import React from "react";
 interface PortFolioProps {
   id?: number;
   data?: Array<string>;
-  image?: string | StaticImageData;
-  title?: string;
+  image: string | StaticImageData;
+  title: string;
   description?: string;
   cardBackgroundColor?: string;
   titleTextColor?: string;
@@ -43,8 +43,8 @@ export const PortFolio = ({
     >
       <CardHeader className="h-[250px] p-0">
       <Image
-        src={typeof image === "string" ? image : image.src}
-        alt={title || ''}
+        src={ image }
+        alt={title}
         width={300} // Match CSS width
         height={300} // Match CSS height
         className="min-w-full h-[250px] object-fill rounded-t-[22px]"
